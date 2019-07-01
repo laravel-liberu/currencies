@@ -1,0 +1,51 @@
+{
+    "routePrefix": "administration.exchangeRates",
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "From",
+                    "name": "from_id",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "source": "administration.currencies.options"
+                    }
+                },
+                {
+                    "label": "To",
+                    "name": "to_id",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "source": "administration.currencies.options"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Conversion Rate",
+                    "name": "conversion",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "number"
+                    }
+                },
+                {
+                    "label": "Date",
+                    "name": "date",
+                    "value": null,
+                    "meta": {
+                        "type": "datepicker",
+                        "format": "d-m-Y"
+                    }
+                }
+            ]
+        }
+    ]
+}

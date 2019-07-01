@@ -1,0 +1,39 @@
+{
+    "name": "Currency",
+    "routePrefix": "administration.currencies",
+    "crtNo": true,
+    "buttons": [
+        "excel",
+        "create",
+        "edit",
+        "destroy"
+    ],
+    "columns": [
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "currencies.name",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Symbol",
+            "name": "symbol",
+            "data": "currencies.symbol",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Default",
+            "name": "is_default",
+            "data": "currencies.is_default",
+            "meta": [
+                "boolean"
+            ]
+        }
+    ]
+}
