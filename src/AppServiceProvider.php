@@ -11,7 +11,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->load()
-            ->observe();
+            ->observe()
+            ->publish();
     }
 
     private function load()
@@ -20,6 +21,13 @@ class AppServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         return $this;
+    }
+
+    private function publish()
+    {
+        $this->publishes([
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], 'currency-seeder');
     }
 
     private function observe()
