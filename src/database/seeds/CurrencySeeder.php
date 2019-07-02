@@ -3,17 +3,16 @@
 use Illuminate\Database\Seeder;
 use LaravelEnso\Currencies\app\Models\Currency;
 
-class DefaultCurrencySeeder extends Seeder
+class CurrencySeeder extends Seeder
 {
     public function run()
     {
-        $this->defaultCurrencies()
-            ->each(function ($currency) {
-                Currency::create($currency);
-            });
+        $this->currencies()->each(function ($currency) {
+            Currency::create($currency);
+        });
     }
 
-    public function defaultCurrencies()
+    public function currencies()
     {
         return collect([
             ['name' => 'Leu', 'symbol' => 'RON', 'is_default' => true],
