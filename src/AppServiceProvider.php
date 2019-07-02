@@ -2,7 +2,7 @@
 
 namespace LaravelEnso\Currencies;
 
-use Carbon\Laravel\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Observers\Observer;
 
