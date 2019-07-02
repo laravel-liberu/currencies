@@ -11,8 +11,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->load()
-            ->observe()
-            ->publish();
+            ->publish()
+            ->observe();
     }
 
     private function load()
