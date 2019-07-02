@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Http\Controllers\ExchangeRates;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Models\ExchangeRate;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
+use LaravelEnso\Currencies\app\Models\ExchangeRate;
 
 class Options extends Controller
 {

@@ -18,7 +18,7 @@ class CreateStructureForCurrencies extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Currency', 'icon' => 'coins', 'route' => 'administration.currencies.index', 'order_index' => 10, 'has_children' => false
+        'name' => 'Currency', 'icon' => 'coins', 'route' => 'administration.currencies.index', 'order_index' => 10, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Administration';

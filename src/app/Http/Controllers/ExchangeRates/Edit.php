@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\Currencies\app\Http\Controllers\ExchangeRates;
 
-
 use Illuminate\Routing\Controller;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
 use LaravelEnso\Currencies\app\Forms\Builders\ExchangeRateForm;

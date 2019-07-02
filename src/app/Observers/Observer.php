@@ -1,4 +1,5 @@
 <?php
+
 namespace LaravelEnso\Currencies\app\Observers;
 
 use LaravelEnso\Currencies\app\Models\Currency;

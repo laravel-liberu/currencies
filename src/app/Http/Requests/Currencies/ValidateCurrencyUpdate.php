@@ -1,4 +1,5 @@
 <?php
+
 namespace LaravelEnso\Currencies\app\Http\Requests\Currencies;
 
 class ValidateCurrencyUpdate extends ValidateCurrencyStore

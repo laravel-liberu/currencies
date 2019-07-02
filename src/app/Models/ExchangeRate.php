@@ -1,4 +1,5 @@
 <?php
+
 namespace LaravelEnso\Currencies\app\Models;
 
 use Carbon\Carbon;
@@ -16,7 +17,7 @@ class ExchangeRate extends Model
             ? Carbon::createFromFormat('d-m-Y', $value)->format('Y-m-d')
             : null;
     }
-    
+
     public function from()
     {
         return $this->belongsTo(Currency::class, 'from_id');

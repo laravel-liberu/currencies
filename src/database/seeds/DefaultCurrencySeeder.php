@@ -8,7 +8,7 @@ class DefaultCurrencySeeder extends Seeder
     public function run()
     {
         $this->defaultCurrencies()
-            ->each(function($currency) {
+            ->each(function ($currency) {
                 Currency::create($currency);
             });
     }
@@ -16,9 +16,9 @@ class DefaultCurrencySeeder extends Seeder
     public function defaultCurrencies()
     {
         return collect([
-            [ 'name' => 'Leu', 'symbol'=> 'RON', 'is_default' => true ], 
-            [ 'name' => 'Euro', 'symbol'=> '€', 'is_default' => false ],
-            [ 'name' => 'Dollar', 'symbol'=> '$', 'is_default' => false ],
+            ['name' => 'Leu', 'symbol' => 'RON', 'is_default' => true],
+            ['name' => 'Euro', 'symbol' => '€', 'is_default' => false],
+            ['name' => 'Dollar', 'symbol' => '$', 'is_default' => false],
         ]);
     }
 }

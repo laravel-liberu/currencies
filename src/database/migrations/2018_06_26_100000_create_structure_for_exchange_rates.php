@@ -18,7 +18,7 @@ class CreateStructureForExchangeRates extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Exchange Rates', 'icon' => 'chart-bar', 'route' => 'administration.exchangeRates.index', 'order_index' => 20, 'has_children' => false
+        'name' => 'Exchange Rates', 'icon' => 'chart-bar', 'route' => 'administration.exchangeRates.index', 'order_index' => 20, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Administration';

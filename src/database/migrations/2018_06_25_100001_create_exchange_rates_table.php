@@ -10,7 +10,7 @@ class CreateExchangeRatesTable extends Migration
     {
         Schema::create('exchange_rates', function (Blueprint $table) {
             $table->increments('id');
-            
+
             $table->integer('from_id')->unsigned();
             $table->foreign('from_id')->references('id')->on('currencies');
             $table->integer('to_id')->unsigned();

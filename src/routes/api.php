@@ -4,10 +4,10 @@ Route::middleware(['web', 'auth', 'core'])
     ->namespace('LaravelEnso\Currencies\app\Http\Controllers')
     ->prefix('api/administration')
     ->as('administration.')
-    ->group(function() {
+    ->group(function () {
         Route::namespace('Currencies')
             ->prefix('currencies')->as('currencies.')
-            ->group(function() {
+            ->group(function () {
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
                 Route::get('{currency}/edit', 'Edit')->name('edit');
@@ -20,7 +20,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
             });
-            Route::namespace('ExchangeRates')
+        Route::namespace('ExchangeRates')
                 ->prefix('exchangeRates')->as('exchangeRates.')
                 ->group(function () {
                     Route::get('create', 'Create')->name('create');

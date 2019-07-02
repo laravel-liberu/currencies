@@ -1,4 +1,5 @@
 <?php
+
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,7 @@ class Currency extends Model
     {
         return $this->hasMany(ExchangeRate::class, 'to_id');
     }
-    
+
     public function scopeDefault($query)
     {
         return $query->whereIsDefault(true);

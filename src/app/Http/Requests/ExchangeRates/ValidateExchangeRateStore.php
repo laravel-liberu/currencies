@@ -13,7 +13,7 @@ class ValidateExchangeRateStore extends FormRequest
     {
         return true;
     }
-    
+
     public function rules()
     {
         return [
@@ -33,7 +33,7 @@ class ValidateExchangeRateStore extends FormRequest
                     __('This exchange rate is already defined for the specified date!')
                 );
             }
-            
+
             if ($this->noDefaultSelected()) {
                 collect(['from_id', 'to_id'])->each(function ($field) use ($validator) {
                     $validator->errors()->add(
@@ -46,7 +46,7 @@ class ValidateExchangeRateStore extends FormRequest
     }
 
     protected function exchangeRate()
-    {   
+    {
         return ExchangeRate::whereToId($this->get('to_id'))
             ->whereFromId($this->get('from_id'))
             ->where(
@@ -62,7 +62,7 @@ class ValidateExchangeRateStore extends FormRequest
     {
         return Currency::default()
             ->whereIn('id', [
-                $this->get('to_id'), $this->get('from_id')
+                $this->get('to_id'), $this->get('from_id'),
             ])->first() === null;
     }
 }
