@@ -28,12 +28,12 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/database/seeds' => database_path('seeds'),
         ], 'currency-seeder');
+        
+        return $this;
     }
 
     private function observe()
     {
         Currency::observe(Observer::class);
-
-        return $this;
     }
 }
