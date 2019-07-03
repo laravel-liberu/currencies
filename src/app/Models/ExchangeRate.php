@@ -27,7 +27,7 @@ class ExchangeRate extends Model
     {
         return $this->belongsTo(Currency::class, 'from_id');
     }
-    
+
     public function to()
     {
         return $this->belongsTo(Currency::class, 'to_id');
