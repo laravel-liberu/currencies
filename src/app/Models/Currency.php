@@ -3,10 +3,12 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
+use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Currency extends Model
 {
+    use AvoidsDeletionConflicts;
+    
     protected $fillable = ['name', 'symbol', 'is_default'];
 
     protected $casts = ['is_default' => 'boolean'];
@@ -24,16 +26,5 @@ class Currency extends Model
     public function scopeDefault($query)
     {
         return $query->whereIsDefault(true);
-    }
-
-    public function delete()
-    {
-        try {
-            parent::delete();
-        } catch (\Exception $e) {
-            throw new ConflictHttpException(__(
-                'The currency is being used in the system and cannot be deleted'
-            ));
-        }
     }
 }
