@@ -8,7 +8,7 @@ use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 class Currency extends Model
 {
     use AvoidsDeletionConflicts;
-    
+
     protected $fillable = ['name', 'symbol', 'is_default'];
 
     protected $casts = ['is_default' => 'boolean'];
