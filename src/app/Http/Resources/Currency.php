@@ -1,6 +1,5 @@
 <?php
 
-
 namespace LaravelEnso\Currencies\app\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
