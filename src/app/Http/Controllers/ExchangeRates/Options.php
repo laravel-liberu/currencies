@@ -10,5 +10,7 @@ class Options extends Controller
 {
     use OptionsBuilder;
 
+    protected $queryAttributes = ['from_id', 'to_id'];
+
     protected $model = ExchangeRate::class;
 }

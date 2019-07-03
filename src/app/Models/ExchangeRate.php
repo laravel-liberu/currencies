@@ -14,10 +14,12 @@ class ExchangeRate extends Model
 
     protected $dates = ['date'];
 
+    protected $casts = ['date' => 'date:d-m-Y'];
+
     public function setDateAttribute($value)
     {
-        $this->attributes['date'] = $value
-            ? Carbon::createFromFormat('d-m-Y', $value)->format('Y-m-d')
+        $this->attributes['date'] = isset($value)
+            ? Carbon::parse($value)
             : null;
     }
 
