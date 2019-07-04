@@ -18,9 +18,12 @@ class ExchangeRate extends Model
 
     public function setDateAttribute($value)
     {
-        $this->attributes['date'] = isset($value)
-            ? Carbon::parse($value)
-            : null;
+        $this->attributes['date'] = is_string($value)
+            ? Carbon::createFromFormat(
+                config('enso.config.dateFormat'),
+                $value
+            )
+            : $value;
     }
 
     public function from()
