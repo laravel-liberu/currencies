@@ -2,49 +2,31 @@
     "name": "Exchange Rate",
     "routePrefix": "administration.exchangeRates",
     "crtNo": true,
-    "buttons": [
-        "excel",
-        "create",
-        "edit",
-        "destroy"
-    ],
+    "buttons": ["excel", "create", "edit", "destroy"],
     "columns": [
         {
             "label": "From",
             "name": "from",
             "data": "fromCurrencies.name",
-            "meta": [
-                "searchable",
-                "sortable"
-            ]
+            "meta": ["searchable", "sortable"]
         },
         {
             "label": "To",
             "name": "to",
             "data": "toCurrencies.name",
-            "meta": [
-                "searchable",
-                "sortable"
-            ]
+            "meta": ["searchable", "sortable"]
         },
         {
             "label": "Converstion Rate",
             "name": "conversion",
             "data": "echange_rates.conversion",
-            "meta": [
-                "searchable",
-                "sortable"
-            ]
+            "meta": ["searchable", "sortable"]
         },
         {
             "label": "Date",
             "name": "date",
             "data": "echange_rates.date",
-            "meta": [
-                "searchable",
-                "sortable",
-                "date"
-            ]
+            "meta": ["searchable", "sortable", "date"]
         }
     ]
 }

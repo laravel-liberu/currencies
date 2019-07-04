@@ -14,11 +14,10 @@ class CreateStructureForExchangeRates extends Migration
         ['name' => 'administration.exchangeRates.initTable', 'description' => 'Init table for rate', 'type' => 0, 'is_default' => false],
         ['name' => 'administration.exchangeRates.tableData', 'description' => 'Get table data for rate', 'type' => 0, 'is_default' => false],
         ['name' => 'administration.exchangeRates.exportExcel', 'description' => 'Export excel for rate', 'type' => 0, 'is_default' => false],
-        ['name' => 'administration.exchangeRates.options', 'description' => 'Get rate options for select', 'type' => 0, 'is_default' => false],
     ];
 
     protected $menu = [
-        'name' => 'Exchange Rates', 'icon' => 'chart-bar', 'route' => 'administration.exchangeRates.index', 'order_index' => 20, 'has_children' => false,
+        'name' => 'Exchange Rates', 'icon' => 'coins', 'route' => 'administration.exchangeRates.index', 'order_index' => 20, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Administration';

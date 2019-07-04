@@ -15,9 +15,9 @@ class CurrencySeeder extends Seeder
     public function currencies()
     {
         return collect([
-            ['name' => 'Leu', 'symbol' => 'RON', 'is_default' => true],
-            ['name' => 'Euro', 'symbol' => '€', 'is_default' => false],
-            ['name' => 'Dollar', 'symbol' => '$', 'is_default' => false],
+            ['name' => 'Leu', 'symbol' => 'leu-sign', 'is_default' => true],
+            ['name' => 'Euro', 'symbol' => 'euro-sign', 'is_default' => false],
+            ['name' => 'Dollar', 'symbol' => 'dollar-sign', 'is_default' => false],
         ]);
     }
 }

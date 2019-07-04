@@ -22,7 +22,7 @@ class ExchangeRateTest extends TestCase
     {
         parent::setUp();
 
-        $this->withoutExceptionHandling();
+        // $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs(User::first());
@@ -60,7 +60,7 @@ class ExchangeRateTest extends TestCase
     public function can_update_exchange_rate()
     {
         tap($this->testModel)->save()
-            ->conversion = 0.5;
+            ->conversion += 0.1;
 
         $this->patch(
             route('administration.exchangeRates.update', $this->testModel->id, false),
@@ -72,18 +72,5 @@ class ExchangeRateTest extends TestCase
             $this->testModel->conversion,
             $this->testModel->fresh()->conversion
         );
-    }
-
-    /** @test */
-    public function get_option_list()
-    {
-        $this->testModel->save();
-
-        $this->get(route('administration.exchangeRates.options', [
-            'query' => $this->testModel->from_id,
-            'limit' => 10,
-        ], false))
-        ->assertStatus(200)
-        ->assertJsonFragment($this->testModel->fresh()->toArray());
     }
 }

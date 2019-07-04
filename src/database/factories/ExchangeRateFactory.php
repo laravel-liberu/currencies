@@ -10,7 +10,7 @@ $factory->define(ExchangeRate::class, function (Faker $faker) {
             return factory(Currency::class)->create()->id;
         },
         'to_id' => function () {
-            return factory(Currency::class)->create()->id; 
+            return factory(Currency::class)->create()->id;
         },
         'conversion' => $faker->randomFloat(4, 0.0001, 10.0000),
         'date' => now()->subDays(rand(15, 40)),
