@@ -16,7 +16,7 @@ export default {
 
     props: {
         symbol: {
-            type: Number,
+            type: String,
             default: null,
         },
     },
