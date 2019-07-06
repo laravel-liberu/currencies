@@ -10,7 +10,6 @@ class Store extends Controller
 {
     public function __invoke(ValidateCurrencyStore $request, Currency $currency)
     {
-        \Log::info($request);
         $currency->fill($request->validated())->save();
 
         return [

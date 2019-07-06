@@ -34,7 +34,7 @@ class ValidateExchangeRateStore extends FormRequest
                 );
             }
 
-            if ($this->noDefaultSelected()) {
+            if ($this->missingDefault()) {
                 collect(['from_id', 'to_id'])->each(function ($field) use ($validator) {
                     $validator->errors()->add(
                         $field,
@@ -58,7 +58,7 @@ class ValidateExchangeRateStore extends FormRequest
             );
     }
 
-    protected function noDefaultSelected()
+    protected function missingDefault()
     {
         return Currency::default()
             ->whereIn('id', [
