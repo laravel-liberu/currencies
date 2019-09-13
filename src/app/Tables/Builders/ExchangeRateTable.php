@@ -12,7 +12,7 @@ class ExchangeRateTable extends Table
     public function query()
     {
         return ExchangeRate::selectRaw('
-            exchange_rates.id as "dtRowId",
+            exchange_rates.id,
             fromCurrencies.name as "from",
             toCurrencies.name as "to",
             exchange_rates.conversion,

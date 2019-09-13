@@ -12,7 +12,7 @@ class CurrencyTable extends Table
     public function query()
     {
         return Currency::selectRaw('
-            currencies.id as "dtRowId",
+            currencies.id,
             currencies.name,
             currencies.symbol,
             currencies.is_default
