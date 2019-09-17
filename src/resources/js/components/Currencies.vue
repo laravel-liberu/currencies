@@ -23,7 +23,8 @@ export default {
     },
 
     computed: {
-        ...mapState(['enums', 'currencies']),
+        ...mapState(['enums']),
+        ...mapState('local', ['currencies']),
         default() {
             return this.currencies.find(({ isDefault }) => isDefault);
         },
