@@ -25,7 +25,7 @@
     "homepage": "https://github.com/laravel-enso/currencies",
     "require": {
         "php": ">=7.1.2",
-        "laravel-enso/core": "4.3.*",
+        "laravel-enso/core": "4.4.*",
         "laravel-enso/helpers": "1.12.*",
         "laravel-enso/select": "3.2.*",
         "laravel-enso/tables": "2.2.*",
