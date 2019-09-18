@@ -3,16 +3,16 @@
 [![StyleCI](https://github.styleci.io/repos/194647672/shield?branch=master)](https://github.styleci.io/repos/194647672)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c8421322ab94fc2a612bcf56bc0f294)](https://www.codacy.com/app/laravel-enso/currencies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laravel-enso/currencies&amp;utm_campaign=Badge_Grade)
 
-Currencies package is an extesion of the Laravel Enso enviroment, designed for management of currencies and exchange rates.
+Currencies is an extension of the Laravel Enso enviroment, designed for management of currencies and exchange rates.
 
-**Note:** *This package cannot be used outside of enso enviroment and is not included in [Laravel Enso Core](https://github.com/laravel-enso/Core) packages.*
+**Note:** *The package cannot be used outside of Enso enviroment and is not included in [Laravel Enso Core](https://github.com/laravel-enso/Core) packages.*
 
 ### Features
-* adds crud operations for currencies
-* adds crud operations for exchange rates
-* manages default currency for your project
-* comes with a common currencies seeder
-* includes front-end assets
+- handles CRUD operations for currencies and exchange rates
+- manages the default currency for your project 
+- exchange rates can be input for a given day
+- comes with an included currencies seeder which can be published and further customized
+- includes front-end assets
 
 ### Instalation
 * install the package using composer: `composer require laravel-enso/currencies`
