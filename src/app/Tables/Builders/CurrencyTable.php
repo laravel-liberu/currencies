@@ -2,20 +2,21 @@
 
 namespace LaravelEnso\Currencies\app\Tables\Builders;
 
-use LaravelEnso\Tables\app\Services\Table;
+use Illuminate\Database\Eloquent\Builder;
+use LaravelEnso\Tables\app\Contracts\Table;
 use LaravelEnso\Currencies\app\Models\Currency;
 
-class CurrencyTable extends Table
+class CurrencyTable implements Table
 {
-    protected $templatePath = __DIR__.'/../Templates/currencies.json';
+    protected const TemplatePath = __DIR__.'/../Templates/currencies.json';
 
-    public function query()
+    public function query() : Builder
     {
-        return Currency::selectRaw('
-            currencies.id,
-            currencies.name,
-            currencies.symbol,
-            currencies.is_default
-        ');
+        return Currency::selectRaw('id,name,symbol,is_default');
+    }
+
+    public function templatePath(): string
+    {
+        return static::TemplatePath;
     }
 }

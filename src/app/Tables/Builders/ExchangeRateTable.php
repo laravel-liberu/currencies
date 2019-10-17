@@ -2,14 +2,15 @@
 
 namespace LaravelEnso\Currencies\app\Tables\Builders;
 
-use LaravelEnso\Tables\app\Services\Table;
+use Illuminate\Database\Eloquent\Builder;
+use LaravelEnso\Tables\app\Contracts\Table;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
 
-class ExchangeRateTable extends Table
+class ExchangeRateTable implements Table
 {
-    protected $templatePath = __DIR__.'/../Templates/exchangeRates.json';
+    protected const TemplatePath = __DIR__.'/../Templates/exchangeRates.json';
 
-    public function query()
+    public function query() : Builder
     {
         return ExchangeRate::selectRaw('
             exchange_rates.id,
@@ -19,5 +20,10 @@ class ExchangeRateTable extends Table
             exchange_rates.date
         ')->join('currencies as fromCurrencies', 'fromCurrencies.id', '=', 'exchange_rates.from_id')
         ->join('currencies as toCurrencies', 'toCurrencies.id', '=', 'exchange_rates.to_id');
+    }
+
+    public function templatePath(): string
+    {
+        return static::TemplatePath;
     }
 }
