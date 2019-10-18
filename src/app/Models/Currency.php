@@ -3,11 +3,12 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\app\Traits\TableCache;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Currency extends Model
 {
-    use AvoidsDeletionConflicts;
+    use AvoidsDeletionConflicts, TableCache;
 
     protected $fillable = ['name', 'symbol', 'is_default'];
 

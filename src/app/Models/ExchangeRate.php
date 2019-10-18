@@ -4,11 +4,12 @@ namespace LaravelEnso\Currencies\app\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\app\Traits\TableCache;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class ExchangeRate extends Model
 {
-    use AvoidsDeletionConflicts;
+    use AvoidsDeletionConflicts, TableCache;
 
     protected $fillable = ['from_id', 'to_id', 'conversion', 'date'];
 
