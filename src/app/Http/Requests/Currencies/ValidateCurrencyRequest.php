@@ -5,7 +5,7 @@ namespace LaravelEnso\Currencies\app\Http\Requests\Currencies;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateCurrencyStore extends FormRequest
+class ValidateCurrencyRequest extends FormRequest
 {
     public function authorize()
     {
@@ -23,6 +23,7 @@ class ValidateCurrencyStore extends FormRequest
 
     protected function uniqueName()
     {
-        return Rule::unique('currencies', 'name');
+        return Rule::unique('currencies', 'name')
+            ->ignore(optional($this->route('currency'))->id);
     }
 }

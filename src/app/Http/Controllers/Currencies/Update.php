@@ -4,11 +4,11 @@ namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
 use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Currencies\app\Http\Requests\Currencies\ValidateCurrencyUpdate;
+use LaravelEnso\Currencies\app\Http\Requests\Currencies\ValidateCurrencyRequest;
 
 class Update extends Controller
 {
-    public function __invoke(ValidateCurrencyUpdate $request, Currency $currency)
+    public function __invoke(ValidateCurrencyRequest $request, Currency $currency)
     {
         $currency->update($request->validated());
 

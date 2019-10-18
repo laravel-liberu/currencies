@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
 
-class ValidateExchangeRateStore extends FormRequest
+class ValidateExchangeRateRequest extends FormRequest
 {
     public function authorize()
     {
@@ -55,7 +55,7 @@ class ValidateExchangeRateStore extends FormRequest
                     config('enso.config.dateFormat'),
                     $this->get('date')
                 )
-            );
+            )->where('id', '<>', optional($this->route('exchangeRate'))->id);
     }
 
     protected function missingDefault()
