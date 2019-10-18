@@ -15,8 +15,8 @@ class ValidateCurrencyStore extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['string', 'max:25', 'required', $this->uniqueName()],
-            'symbol' => 'string|max:5|required',
+            'name' => 'string|max:255|required|'.$this->uniqueName(),
+            'symbol' => 'string|required',
             'is_default' => 'boolean',
         ];
     }
