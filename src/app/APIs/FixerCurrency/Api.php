@@ -44,7 +44,7 @@ class Api
 
         return $this;
     }
-    
+
     public function query($query)
     {
         $this->query = $query;

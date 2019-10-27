@@ -18,7 +18,7 @@ class Currency extends Model
     {
         return $query->whereIsDefault(true);
     }
-    
+
     public function scopeForeign($query)
     {
         return $query->whereIsDefault(false);

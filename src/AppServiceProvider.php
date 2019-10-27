@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
             ->publish()
             ->observe()
             ->commands([
-                FetchExchangeRates::class
+                FetchExchangeRates::class,
             ]);
     }
 

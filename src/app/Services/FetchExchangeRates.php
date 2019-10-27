@@ -24,13 +24,13 @@ class FetchExchangeRates
             $this->base, $this->currencies
         ))->handle();
 
-        collect($this->response->rates)->each(function($conversion, $currency) {
+        collect($this->response->rates)->each(function ($conversion, $currency) {
             ExchangeRate::updateOrCreate([
                 'from_id' => $this->base->id,
                 'to_id' => $this->currency($currency)->id,
                 'date' => $this->response->date,
             ], [
-                'conversion' => $conversion
+                'conversion' => $conversion,
             ]);
         });
     }
