@@ -16,7 +16,7 @@ class CreateExchangeRatesTable extends Migration
             $table->integer('to_id')->unsigned();
             $table->foreign('to_id')->references('id')->on('currencies');
 
-            $table->decimal('conversion', 8, 4);
+            $table->decimal('conversion', 12, 6);
 
             $table->date('date');
 

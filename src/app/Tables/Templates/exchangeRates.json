@@ -7,13 +7,13 @@
         {
             "label": "From",
             "name": "from",
-            "data": "fromCurrencies.name",
+            "data": "fromCurrencies.short_name",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "To",
             "name": "to",
-            "data": "toCurrencies.name",
+            "data": "toCurrencies.short_name",
             "meta": ["searchable", "sortable"]
         },
         {

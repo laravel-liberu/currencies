@@ -13,10 +13,8 @@ class ExchangeRateTable implements Table
     public function query() : Builder
     {
         return ExchangeRate::selectRaw('
-            exchange_rates.id,
-            fromCurrencies.name as "from",
-            toCurrencies.name as "to",
-            exchange_rates.conversion,
+            exchange_rates.id, fromCurrencies.short_name as "from",
+            toCurrencies.short_name as "to", exchange_rates.conversion,
             exchange_rates.date
         ')->join('currencies as fromCurrencies', 'fromCurrencies.id', '=', 'exchange_rates.from_id')
         ->join('currencies as toCurrencies', 'toCurrencies.id', '=', 'exchange_rates.to_id');
