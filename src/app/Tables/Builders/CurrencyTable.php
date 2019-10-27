@@ -12,7 +12,10 @@ class CurrencyTable implements Table
 
     public function query() : Builder
     {
-        return Currency::selectRaw('id,name,symbol,is_default');
+        return Currency::selectRaw('
+            currencies.id, currencies.short_name, currencies.name,
+            currencies.symbol, currencies.is_default
+        ');
     }
 
     public function templatePath(): string

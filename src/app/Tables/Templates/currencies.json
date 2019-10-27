@@ -3,24 +3,25 @@
     "routePrefix": "administration.currencies",
     "crtNo": true,
     "buttons": ["excel", "create", "edit", "destroy"],
-    "columns": [
-        {
-            "label": "Name",
-            "name": "name",
-            "data": "name",
-            "meta": ["searchable", "sortable"]
-        },
-        {
-            "label": "Symbol",
-            "name": "symbol",
-            "data": "symbol",
-            "meta": ["searchable", "sortable", "slot"]
-        },
-        {
-            "label": "Default",
-            "name": "is_default",
-            "data": "is_default",
-            "meta": ["boolean"]
-        }
-    ]
+    "columns": [{
+        "label": "Short Name",
+        "name": "short_name",
+        "data": "short_name",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "Name",
+        "name": "name",
+        "data": "name",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "Symbol",
+        "name": "symbol",
+        "data": "symbol",
+        "meta": ["searchable", "sortable", "slot"]
+    }, {
+        "label": "Default",
+        "name": "is_default",
+        "data": "is_default",
+        "meta": ["boolean"]
+    }]
 }

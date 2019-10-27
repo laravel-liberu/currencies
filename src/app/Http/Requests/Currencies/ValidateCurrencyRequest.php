@@ -15,15 +15,16 @@ class ValidateCurrencyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|max:255|required|'.$this->uniqueName(),
+            'short_name' => 'string|max:255|required|'.$this->unique('short_name'),
+            'name' => 'string|max:255|required|'.$this->unique('name'),
             'symbol' => 'string|required',
             'is_default' => 'boolean',
         ];
     }
 
-    protected function uniqueName()
+    protected function unique($attribute)
     {
-        return Rule::unique('currencies', 'name')
+        return Rule::unique('currencies', $attribute)
             ->ignore(optional($this->route('currency'))->id);
     }
 }

@@ -2,30 +2,20 @@
 
 namespace LaravelEnso\Currencies\app\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\app\Traits\TableCache;
+use LaravelEnso\Helpers\app\Traits\DateAttributes;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class ExchangeRate extends Model
 {
-    use AvoidsDeletionConflicts, TableCache;
+    use AvoidsDeletionConflicts, DateAttributes, TableCache;
 
     protected $fillable = ['from_id', 'to_id', 'conversion', 'date'];
 
     protected $dates = ['date'];
 
     protected $casts = ['date' => 'date:d-m-Y'];
-
-    public function setDateAttribute($value)
-    {
-        $this->attributes['date'] = is_string($value)
-            ? Carbon::createFromFormat(
-                config('enso.config.dateFormat'),
-                $value
-            )
-            : $value;
-    }
 
     public function from()
     {
@@ -35,5 +25,10 @@ class ExchangeRate extends Model
     public function to()
     {
         return $this->belongsTo(Currency::class, 'to_id');
+    }
+
+    public function setDateAttribute($value)
+    {
+        $this->fillDateAttribute('date', $value);
     }
 }

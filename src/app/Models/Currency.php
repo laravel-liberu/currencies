@@ -10,19 +10,9 @@ class Currency extends Model
 {
     use AvoidsDeletionConflicts, TableCache;
 
-    protected $fillable = ['name', 'symbol', 'is_default'];
+    protected $fillable = ['short_name', 'name', 'symbol', 'is_default'];
 
     protected $casts = ['is_default' => 'boolean'];
-
-    public function fromExchanges()
-    {
-        return $this->hasMany(ExchangeRate::class, 'from_id');
-    }
-
-    public function toExchanges()
-    {
-        return $this->hasMany(ExchangeRate::class, 'to_id');
-    }
 
     public function scopeDefault($query)
     {

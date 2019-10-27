@@ -29,16 +29,14 @@ class ValidateExchangeRateRequest extends FormRequest
         $validator->after(function ($validator) {
             if ($this->filled('date') && $this->exchangeRate()->first()) {
                 $validator->errors()->add(
-                    'date',
-                    __('This exchange rate is already defined for the specified date!')
+                    'date', __('This exchange rate is already defined for the specified date!')
                 );
             }
 
             if ($this->missingDefault()) {
                 collect(['from_id', 'to_id'])->each(function ($field) use ($validator) {
                     $validator->errors()->add(
-                        $field,
-                        __('The exchange rate must use your default currency!')
+                        $field, __('The exchange rate must use your default currency!')
                     );
                 });
             }
@@ -47,22 +45,19 @@ class ValidateExchangeRateRequest extends FormRequest
 
     protected function exchangeRate()
     {
+        $date = Carbon::createFromFormat(
+            config('enso.config.dateFormat'), $this->get('date')
+        );
+
         return ExchangeRate::whereToId($this->get('to_id'))
             ->whereFromId($this->get('from_id'))
-            ->where(
-                'date',
-                Carbon::createFromFormat(
-                    config('enso.config.dateFormat'),
-                    $this->get('date')
-                )
-            )->where('id', '<>', optional($this->route('exchangeRate'))->id);
+            ->where('date', $date) 
+            ->where('id', '<>', optional($this->route('exchangeRate'))->id);
     }
 
     protected function missingDefault()
     {
-        return Currency::default()
-            ->whereIn('id', [
-                $this->get('to_id'), $this->get('from_id'),
-            ])->first() === null;
+        return collect([$this->get('to_id'), $this->get('from_id')])
+            ->contains(Currency::default()->first()->id);
     }
 }
