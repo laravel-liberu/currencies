@@ -51,7 +51,7 @@ class ValidateExchangeRateRequest extends FormRequest
 
         return ExchangeRate::whereToId($this->get('to_id'))
             ->whereFromId($this->get('from_id'))
-            ->where('date', $date) 
+            ->where('date', $date)
             ->where('id', '<>', optional($this->route('exchangeRate'))->id);
     }
 
