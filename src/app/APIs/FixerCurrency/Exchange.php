@@ -24,7 +24,7 @@ abstract class Exchange
             ? $this->currencies
             : collect([$this->currencies]);
 
-        return $collection->map(function(Currency $currency) {
+        return $collection->map(function (Currency $currency) {
             return $currency->short_name;
         })->implode(',');
     }

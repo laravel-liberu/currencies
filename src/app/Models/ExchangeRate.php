@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\Currencies\app\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\app\Traits\TableCache;
 use LaravelEnso\Helpers\app\Traits\DateAttributes;
