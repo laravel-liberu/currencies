@@ -2,9 +2,9 @@
 
 namespace LaravelEnso\Currencies\app\Services;
 
+use LaravelEnso\Currencies\app\APIs\FixerCurrency\Rates;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
-use LaravelEnso\Currencies\app\APIs\FixerCurrency\Rates;
 
 class FetchExchangeRates
 {

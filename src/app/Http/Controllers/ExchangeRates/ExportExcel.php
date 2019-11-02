@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Http\Controllers\ExchangeRates;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\app\Traits\Excel;
 use LaravelEnso\Currencies\app\Tables\Builders\ExchangeRateTable;
+use LaravelEnso\Tables\app\Traits\Excel;
 
 class ExportExcel extends Controller
 {

@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Currencies\app\Http\Requests\Currencies;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ValidateCurrencyRequest extends FormRequest
 {

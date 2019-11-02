@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 use LaravelEnso\Currencies\app\Models\Currency;
 
 $factory->define(Currency::class, function (Faker $faker) {

@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Currencies\app\Forms\Builders;
 
-use LaravelEnso\Forms\app\Services\Form;
 use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Forms\app\Services\Form;
 
 class CurrencyForm
 {

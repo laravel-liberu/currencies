@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Http\Requests\Currencies\ValidateCurrencyRequest;
+use LaravelEnso\Currencies\app\Models\Currency;
 
 class Update extends Controller
 {

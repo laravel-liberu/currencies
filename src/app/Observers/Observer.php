@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Observers;
 
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Exceptions\CurrencyException;
+use LaravelEnso\Currencies\app\Models\Currency;
 
 class Observer
 {

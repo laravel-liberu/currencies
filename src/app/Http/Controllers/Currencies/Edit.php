@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Forms\Builders\CurrencyForm;
+use LaravelEnso\Currencies\app\Models\Currency;
 
 class Edit extends Controller
 {
