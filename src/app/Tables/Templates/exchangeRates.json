@@ -3,30 +3,29 @@
     "routePrefix": "administration.exchangeRates",
     "crtNo": true,
     "buttons": ["excel", "create", "edit", "destroy"],
-    "columns": [
-        {
-            "label": "From",
-            "name": "from",
-            "data": "fromCurrencies.short_name",
-            "meta": ["searchable", "sortable"]
-        },
-        {
-            "label": "To",
-            "name": "to",
-            "data": "toCurrencies.short_name",
-            "meta": ["searchable", "sortable"]
-        },
-        {
-            "label": "Converstion Rate",
-            "name": "conversion",
-            "data": "conversion",
-            "meta": ["searchable", "sortable"]
-        },
-        {
-            "label": "Date",
-            "name": "date",
-            "data": "date",
-            "meta": ["searchable", "sortable", "date"]
+    "columns": [{
+        "label": "From",
+        "name": "from",
+        "data": "fromCurrencies.short_name",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "To",
+        "name": "to",
+        "data": "toCurrencies.short_name",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "Converstion Rate",
+        "name": "conversion",
+        "data": "conversion",
+        "meta": ["searchable", "sortable"],
+        "money": {
+            "precision": 6,
+            "symbol": ""
         }
-    ]
+    }, {
+        "label": "Date",
+        "name": "date",
+        "data": "date",
+        "meta": ["searchable", "sortable", "date"]
+    }]
 }

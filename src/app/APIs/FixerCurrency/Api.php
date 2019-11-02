@@ -7,8 +7,6 @@ use LaravelEnso\Currencies\app\APIs\Exceptions\FixerCurrencyApiException;
 
 class Api
 {
-    private const Method = 'GET';
-
     private $client;
     private $method;
     private $endPoint;
@@ -16,26 +14,17 @@ class Api
 
     public function __construct()
     {
-        $this->client = new Client(['base_uri' => $this->baseUri()]);
-
-        $this->method = self::Method;
+        $this->client = new Client([
+            'base_uri' => config('enso.currencies.fixerCurrencyApi.host'),
+            'headers' => $this->headers(),
+        ]);
     }
 
     public function request()
     {
-        $response = $this->client->request($this->method, $this->endPoint, [
-            'headers' => $this->headers(),
-            'query' => $this->query,
-        ]);
+        $response = $this->client->get($this->endPoint, ['query' => $this->query]);
 
         return $this->body($response);
-    }
-
-    public function method($method)
-    {
-        $this->method = $method;
-
-        return $this;
     }
 
     public function endPoint($endPoint)
@@ -72,18 +61,7 @@ class Api
     private function headers()
     {
         return [
-            'x-rapidapi-host' => $this->host(),
             'x-rapidapi-key' => config('enso.currencies.fixerCurrencyApi.key'),
         ];
-    }
-
-    private function baseUri()
-    {
-        return "https://{$this->host()}";
-    }
-
-    private function host()
-    {
-        return config('enso.currencies.fixerCurrencyApi.host');
     }
 }

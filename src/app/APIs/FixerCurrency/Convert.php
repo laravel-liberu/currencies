@@ -24,10 +24,16 @@ class Convert
     public function handle()
     {
         return $this->api->endPoint(self::EndPoint)
-            ->query([
-                'from' => $this->from->short_name,
-                'to' => $this->to->short_name,
-                'amount' => $this->amount,
-            ])->request();
+            ->query($this->query())
+            ->request();
+    }
+
+    private function query()
+    {
+        return [
+            'from' => $this->from->short_name,
+            'to' => $this->to->short_name,
+            'amount' => $this->amount,
+        ];
     }
 }

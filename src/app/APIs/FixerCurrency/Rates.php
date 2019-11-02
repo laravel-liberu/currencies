@@ -9,9 +9,15 @@ class Rates extends Exchange
     public function handle()
     {
         return $this->api->endPoint(self::EndPoint)
-            ->query([
-                'base' => $this->base->short_name,
-                'symbols' => $this->symbols(),
-            ])->request();
+            ->query($this->query())
+            ->request();
+    }
+
+    private function query()
+    {
+        return [
+            'base' => $this->base->short_name,
+            'symbols' => $this->symbols(),
+        ];
     }
 }

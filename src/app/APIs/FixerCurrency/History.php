@@ -19,9 +19,15 @@ class History extends Exchange
     public function handle()
     {
         return $this->api->endPoint($this->date->format('Y-m-d'))
-            ->query([
-                'base' => $this->base,
-                'symbols' => $this->symbols(),
-            ])->request();
+            ->query($this->query())
+            ->request();
+    }
+
+    private function query()
+    {
+        return [
+            'base' => $this->base,
+            'symbols' => $this->symbols(),
+        ];
     }
 }
