@@ -3,19 +3,16 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\app\Traits\DateAttributes;
 use LaravelEnso\Tables\app\Traits\TableCache;
+use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class ExchangeRate extends Model
 {
-    use AvoidsDeletionConflicts, DateAttributes, TableCache;
+    use AvoidsDeletionConflicts, TableCache;
 
     protected $fillable = ['from_id', 'to_id', 'conversion', 'date'];
 
     protected $dates = ['date'];
-
-    protected $casts = ['date' => 'date:d-m-Y'];
 
     public function from()
     {
@@ -25,10 +22,5 @@ class ExchangeRate extends Model
     public function to()
     {
         return $this->belongsTo(Currency::class, 'to_id');
-    }
-
-    public function setDateAttribute($value)
-    {
-        $this->fillDateAttribute('date', $value);
     }
 }
