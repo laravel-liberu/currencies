@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Tables\app\Traits\TableCache;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Tables\app\Traits\TableCache;
 
 class ExchangeRate extends Model
 {
