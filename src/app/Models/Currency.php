@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Tables\app\Traits\TableCache;
+use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Currency extends Model
 {
@@ -13,6 +13,16 @@ class Currency extends Model
     protected $fillable = ['short_name', 'name', 'symbol', 'is_default'];
 
     protected $casts = ['is_default' => 'boolean'];
+
+    public function fromExchangeRates()
+    {
+        return $this->hasMany(ExchangeRate::class, 'from_id');
+    }
+
+    public function toExchangeRates()
+    {
+        return $this->hasMany(ExchangeRate::class, 'to_id');
+    }
 
     public function scopeDefault($query)
     {

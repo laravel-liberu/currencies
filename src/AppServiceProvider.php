@@ -3,9 +3,9 @@
 namespace LaravelEnso\Currencies;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Currencies\app\Commands\FetchExchangeRates;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Observers\Observer;
+use LaravelEnso\Currencies\app\Commands\FetchExchangeRates;
 
 class AppServiceProvider extends ServiceProvider
 {
