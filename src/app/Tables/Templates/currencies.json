@@ -17,7 +17,8 @@
         "label": "Symbol",
         "name": "symbol",
         "data": "symbol",
-        "meta": ["searchable", "sortable", "slot"]
+        "meta": ["searchable", "sortable"],
+        "class": "tag is-warning is-table-tag"
     }, {
         "label": "Default",
         "name": "is_default",
