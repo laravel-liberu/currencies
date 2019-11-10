@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\app\Contracts\Table;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
+use LaravelEnso\Tables\app\Contracts\Table;
 
 class ExchangeRateTable implements Table
 {

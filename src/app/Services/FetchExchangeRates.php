@@ -2,10 +2,10 @@
 
 namespace LaravelEnso\Currencies\app\Services;
 
-use LaravelEnso\Helpers\app\Classes\Decimals;
+use LaravelEnso\Currencies\app\APIs\FixerCurrency\Rates;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
-use LaravelEnso\Currencies\app\APIs\FixerCurrency\Rates;
+use LaravelEnso\Helpers\app\Classes\Decimals;
 
 class FetchExchangeRates
 {

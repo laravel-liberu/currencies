@@ -3,8 +3,8 @@
 namespace LaravelEnso\Currencies\app\Services;
 
 use Carbon\Carbon;
-use LaravelEnso\Helpers\app\Classes\Decimals;
 use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Helpers\app\Classes\Decimals;
 
 class Converter
 {

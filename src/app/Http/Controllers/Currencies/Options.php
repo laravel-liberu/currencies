@@ -3,9 +3,9 @@
 namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
+use LaravelEnso\Currencies\app\Http\Resources\Currency as Resource;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
-use LaravelEnso\Currencies\app\Http\Resources\Currency as Resource;
 
 class Options extends Controller
 {
