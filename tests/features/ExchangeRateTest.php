@@ -1,13 +1,13 @@
 <?php
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Core\app\Models\User;
-use LaravelEnso\Forms\app\TestTraits\EditForm;
 use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Currencies\app\Models\ExchangeRate;
 use LaravelEnso\Forms\app\TestTraits\CreateForm;
 use LaravelEnso\Forms\app\TestTraits\DestroyForm;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use LaravelEnso\Forms\app\TestTraits\EditForm;
 use LaravelEnso\Tables\app\Traits\Tests\Datatable;
-use LaravelEnso\Currencies\app\Models\ExchangeRate;
+use Tests\TestCase;
 
 class ExchangeRateTest extends TestCase
 {
@@ -22,12 +22,13 @@ class ExchangeRateTest extends TestCase
     {
         parent::setUp();
 
-        // $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs(User::first());
 
         $this->from = factory(Currency::class)->create();
+        $this->from->update(['is_default' => true]);
         $this->to = factory(Currency::class)->create();
         $this->testModel = factory(ExchangeRate::class)->make([
             'from_id' => $this->from->id,
