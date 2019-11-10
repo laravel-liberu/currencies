@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\Currencies\app\Http\Requests\ExchangeRates;
 
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Currencies\app\Models\ExchangeRate;
@@ -45,13 +44,9 @@ class ValidateExchangeRateRequest extends FormRequest
 
     protected function exchangeRate()
     {
-        $date = Carbon::createFromFormat(
-            config('enso.config.dateFormat'), $this->get('date')
-        );
-
         return ExchangeRate::whereToId($this->get('to_id'))
             ->whereFromId($this->get('from_id'))
-            ->whereDate('date', $date)
+            ->whereDate('date', $this->get('date'))
             ->where('id', '<>', optional($this->route('exchangeRate'))->id);
     }
 
