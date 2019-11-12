@@ -8,8 +8,6 @@ use LaravelEnso\Helpers\app\Classes\Decimals;
 
 class Converter
 {
-    public const Precision = 6;
-
     private $date;
     private $from;
     private $to;
@@ -20,7 +18,7 @@ class Converter
     {
         $this->date = Carbon::today();
 
-        $this->precision = self::Precision;
+        $this->precision = config('enso.currencies.converterPrecision');
     }
 
     public function handle()
@@ -46,7 +44,7 @@ class Converter
         return $this;
     }
 
-    public function amount(float $amount)
+    public function amount($amount)
     {
         $this->amount = $amount;
 
