@@ -69,8 +69,8 @@ class Converter
     {
         return $this->from->fromExchangeRates()
             ->whereToId($this->to->id)
-            ->whereDate('date', '<=', $this->date)
-            ->orderByDesc('date')
+            ->whereDate('date', '>=', $this->date)
+            ->orderBy('date')
             ->first();
     }
 }
