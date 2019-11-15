@@ -40,7 +40,9 @@ class FetchExchangeRates
 
             $this->persist($this->base, $to, $conversion);
 
-            $reverseConversion = Decimals::div(1, $conversion, Converter::Precision);
+            $reverseConversion = Decimals::div(
+                1, $conversion, config('enso.currencies.converterPrecision')
+            );
 
             $this->persist($to, $this->base, $reverseConversion);
         });

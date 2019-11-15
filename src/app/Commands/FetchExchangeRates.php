@@ -9,7 +9,7 @@ class FetchExchangeRates extends Command
 {
     protected $signature = 'enso:currencies:fetch-exchange-rates';
 
-    protected $description = 'Fetches latest exchange rates through API';
+    protected $description = 'Fetches the latest exchange rates through API';
 
     public function handle()
     {
