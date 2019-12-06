@@ -10,7 +10,7 @@ class CurrencyTable implements Table
 {
     protected const TemplatePath = __DIR__.'/../Templates/currencies.json';
 
-    public function query() : Builder
+    public function query(): Builder
     {
         return Currency::selectRaw('
             currencies.id, currencies.code, currencies.name,

@@ -1,6 +1,6 @@
 <?php
 
-namespace  LaravelEnso\Currencies\app\Http\Controllers\Currencies;
+namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
 use LaravelEnso\Currencies\app\Tables\Builders\CurrencyTable;

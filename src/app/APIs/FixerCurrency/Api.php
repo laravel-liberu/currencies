@@ -3,12 +3,11 @@
 namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
 
 use GuzzleHttp\Client;
-use LaravelEnso\Currencies\app\APIs\Exceptions\FixerCurrencyApiException;
+use LaravelEnso\Currencies\app\APIs\Exceptions\FixerCurrencyApi;
 
 class Api
 {
     private $client;
-    private $method;
     private $endPoint;
     private $query;
 
@@ -44,7 +43,7 @@ class Api
     private function body($response)
     {
         if ($response->getStatusCode() !== 200) {
-            throw FixerCurrencyApiException::unableToConnect(
+            throw FixerCurrencyApi::unableToConnect(
                 $response->getStatusCode()
             );
         }
@@ -52,7 +51,7 @@ class Api
         $body = json_decode($response->getBody());
 
         if (! $body->success) {
-            throw FixerCurrencyApiException::error($body->code, $body->type);
+            throw FixerCurrencyApi::error($body->code, $body->type);
         }
 
         return $body;

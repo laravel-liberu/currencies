@@ -5,7 +5,8 @@ use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Currencies\app\Models\Currency;
 
 $factory->define(Currency::class, function (Faker $faker) {
-    $country = Country::inRandomOrder()->first();
+    $country = Country::whereNotIn('currency_code', Currency::pluck('code')->toArray())
+        ->inRandomOrder()->first();
 
     return [
         'code' => $country->currency_code,

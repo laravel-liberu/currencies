@@ -10,7 +10,7 @@ class ExchangeRateTable implements Table
 {
     protected const TemplatePath = __DIR__.'/../Templates/exchangeRates.json';
 
-    public function query() : Builder
+    public function query(): Builder
     {
         return ExchangeRate::selectRaw('
             exchange_rates.id, exchange_rates.date, exchange_rates.conversion,
