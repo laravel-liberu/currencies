@@ -1,13 +1,13 @@
 <?php
 
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Core\app\Models\User;
-use LaravelEnso\Forms\app\TestTraits\EditForm;
 use LaravelEnso\Currencies\app\Models\Currency;
 use LaravelEnso\Forms\app\TestTraits\CreateForm;
 use LaravelEnso\Forms\app\TestTraits\DestroyForm;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use LaravelEnso\Forms\app\TestTraits\EditForm;
 use LaravelEnso\Tables\app\Traits\Tests\Datatable;
+use Tests\TestCase;
 
 class CurrencyTest extends TestCase
 {
@@ -20,7 +20,7 @@ class CurrencyTest extends TestCase
     {
         parent::setUp();
 
-        // $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs(User::first());

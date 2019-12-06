@@ -16,7 +16,7 @@ class ValidateCurrencyRequest extends FormRequest
     {
         return [
             'code' => [
-                'string', 'max:255', 'required', 'exists:countries,currency_code',
+                'string', 'required', 'exists:countries,currency_code',
                 $this->unique('code')
             ],
             'name' => 'string|max:255|required|'.$this->unique('name'),
@@ -29,5 +29,11 @@ class ValidateCurrencyRequest extends FormRequest
     {
         return Rule::unique('currencies', $attribute)
             ->ignore(optional($this->route('currency'))->id);
+    }
+
+    public function withValidator($validator)
+    {
+        \Log::info($this->code);
+        \Log::info($validator->errors()->all());
     }
 }
