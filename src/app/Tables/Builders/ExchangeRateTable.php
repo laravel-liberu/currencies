@@ -14,7 +14,7 @@ class ExchangeRateTable implements Table
     {
         return ExchangeRate::selectRaw('
             exchange_rates.id, exchange_rates.date, exchange_rates.conversion,
-            fromCurrencies.short_name as "from", toCurrencies.short_name as "to"
+            fromCurrencies.code as "from", toCurrencies.code as "to"
         ')->join('currencies as fromCurrencies', 'fromCurrencies.id', '=', 'exchange_rates.from_id')
         ->join('currencies as toCurrencies', 'toCurrencies.id', '=', 'exchange_rates.to_id');
     }

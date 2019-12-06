@@ -3,6 +3,7 @@
 namespace LaravelEnso\Currencies\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Tables\app\Traits\TableCache;
 
@@ -10,7 +11,7 @@ class Currency extends Model
 {
     use AvoidsDeletionConflicts, TableCache;
 
-    protected $fillable = ['short_name', 'name', 'symbol', 'is_default'];
+    protected $fillable = ['code', 'name', 'symbol', 'is_default'];
 
     protected $casts = ['is_default' => 'boolean'];
 
@@ -22,6 +23,11 @@ class Currency extends Model
     public function toExchangeRates()
     {
         return $this->hasMany(ExchangeRate::class, 'to_id');
+    }
+
+    public function countries()
+    {
+        return $this->hasMany(Country::class, 'currency_code', 'code');
     }
 
     public function scopeDefault($query)

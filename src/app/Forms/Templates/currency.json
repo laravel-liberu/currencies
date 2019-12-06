@@ -3,8 +3,8 @@
     "sections": [{
         "columns": 2,
         "fields": [{
-            "label": "Short Name",
-            "name": "short_name",
+            "label": "Code",
+            "name": "code",
             "value": null,
             "meta": {
                 "type": "input",

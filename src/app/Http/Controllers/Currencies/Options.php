@@ -15,5 +15,5 @@ class Options extends Controller
 
     protected $resource = Resource::class;
 
-    protected $queryAttributes = ['name', 'short_name'];
+    protected $queryAttributes = ['name', 'code'];
 }

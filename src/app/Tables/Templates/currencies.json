@@ -4,9 +4,9 @@
     "crtNo": true,
     "buttons": ["excel", "create", "edit", "destroy"],
     "columns": [{
-        "label": "Short Name",
-        "name": "short_name",
-        "data": "short_name",
+        "label": "Code",
+        "name": "code",
+        "data": "code",
         "meta": ["searchable", "sortable"]
     }, {
         "label": "Name",

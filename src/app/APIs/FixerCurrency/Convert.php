@@ -31,8 +31,8 @@ class Convert
     private function query()
     {
         return [
-            'from' => $this->from->short_name,
-            'to' => $this->to->short_name,
+            'from' => $this->from->code,
+            'to' => $this->to->code,
             'amount' => $this->amount,
         ];
     }

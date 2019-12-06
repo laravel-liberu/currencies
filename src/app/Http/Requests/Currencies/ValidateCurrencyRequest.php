@@ -15,7 +15,10 @@ class ValidateCurrencyRequest extends FormRequest
     public function rules()
     {
         return [
-            'short_name' => 'string|max:255|required|'.$this->unique('short_name'),
+            'code' => [
+                'string', 'max:255', 'required', 'exists:countries,currency_code',
+                $this->unique('code')
+            ],
             'name' => 'string|max:255|required|'.$this->unique('name'),
             'symbol' => 'string|required',
             'is_default' => 'boolean',

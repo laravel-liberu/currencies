@@ -16,7 +16,7 @@ class Rates extends Exchange
     private function query()
     {
         return [
-            'base' => $this->base->short_name,
+            'base' => $this->base->code,
             'symbols' => $this->symbols(),
         ];
     }

@@ -6,12 +6,12 @@
     "columns": [{
         "label": "From",
         "name": "from",
-        "data": "fromCurrencies.short_name",
+        "data": "fromCurrencies.code",
         "meta": ["searchable", "sortable"]
     }, {
         "label": "To",
         "name": "to",
-        "data": "toCurrencies.short_name",
+        "data": "toCurrencies.code",
         "meta": ["searchable", "sortable"]
     }, {
         "label": "Converstion Rate",

@@ -13,7 +13,7 @@ class CurrencyTable implements Table
     public function query() : Builder
     {
         return Currency::selectRaw('
-            currencies.id, currencies.short_name, currencies.name,
+            currencies.id, currencies.code, currencies.name,
             currencies.symbol, currencies.is_default
         ');
     }

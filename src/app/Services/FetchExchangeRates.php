@@ -59,10 +59,10 @@ class FetchExchangeRates
         ]);
     }
 
-    private function currency(string $shortName)
+    private function currency(string $code)
     {
-        return $this->currencies->first(function ($currency) use ($shortName) {
-            return $currency->short_name === $shortName;
+        return $this->currencies->first(function ($currency) use ($code) {
+            return $currency->code === $code;
         });
     }
 }
