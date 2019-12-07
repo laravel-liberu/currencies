@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class Currency extends JsonResource
 {
-    public function toArray()
+    public function toArray($request)
     {
         return [
             'id' => $this->id,
