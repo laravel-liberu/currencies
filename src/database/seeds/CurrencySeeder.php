@@ -16,7 +16,8 @@ class CurrencySeeder extends Seeder
     public function currencies()
     {
         return App::environment('testing')
-            ? collect([
+            ? collect()
+            : collect([
                 ['code' => 'USD', 'name' => 'US Dollar', 'symbol' => '$', 'is_default' => true],
                 ['code' => 'EUR', 'name' => 'Euro', 'symbol' => '€', 'is_default' => false],
                 ['code' => 'GBP', 'name' => 'GB Pound', 'symbol' => '£', 'is_default' => false],
@@ -37,6 +38,6 @@ class CurrencySeeder extends Seeder
                 ['code' => 'CHF', 'name' => 'Swiss franc', 'symbol' => 'CHF', 'is_default' => false],
                 ['code' => 'UAH', 'name' => 'hryvnia', 'symbol' => '₴', 'is_default' => false],
                 ['code' => 'AED', 'name' => 'UAE dirham', 'symbol' => 'AED', 'is_default' => false],
-            ]) : collect();
+            ]);
     }
 }
