@@ -67,9 +67,22 @@ class Converter
 
     private function rate()
     {
+        return $this->todayRate() ?? $this->mostRecentRate();
+    }
+
+    private function todayRate()
+    {
         return $this->from->fromExchangeRates()
             ->whereToId($this->to->id)
             ->whereDate('date', $this->date)
+            ->orderByDesc('date')
+            ->first();
+    }
+
+    private function mostRecentRate()
+    {
+        return $this->from->fromExchangeRates()
+            ->whereToId($this->to->id)
             ->orderByDesc('date')
             ->first();
     }
