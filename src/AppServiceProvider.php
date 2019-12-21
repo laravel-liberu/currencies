@@ -14,9 +14,7 @@ class AppServiceProvider extends ServiceProvider
         $this->load()
             ->publish()
             ->observe()
-            ->commands([
-                FetchExchangeRates::class,
-            ]);
+            ->commands([FetchExchangeRates::class]);
     }
 
     private function load()

@@ -72,6 +72,14 @@ class Converter
 
     private function todayRate()
     {
+        if (! $this->from) {
+            $this->from = Currency::default()->first();
+        }
+
+        if (! $this->to) {
+            $this->to = Currency::default()->first();
+        }
+
         return $this->from->fromExchangeRates()
             ->whereToId($this->to->id)
             ->whereDate('date', $this->date)
