@@ -33,11 +33,11 @@ class ValidateExchangeRateRequest extends FormRequest
             }
 
             if ($this->missingDefault()) {
-                collect(['from_id', 'to_id'])->each(function ($field) use ($validator) {
+                collect(['from_id', 'to_id'])->each(fn($field) => (
                     $validator->errors()->add(
                         $field, __('The exchange rate must use your default currency!')
-                    );
-                });
+                    )
+                ));
             }
         });
     }

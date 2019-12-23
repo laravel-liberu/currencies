@@ -61,8 +61,7 @@ class FetchExchangeRates
 
     private function currency(string $code)
     {
-        return $this->currencies->first(function ($currency) use ($code) {
-            return $currency->code === $code;
-        });
+        return $this->currencies
+            ->first(fn($currency) => $currency->code === $code);
     }
 }

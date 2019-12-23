@@ -8,9 +8,8 @@ class CurrencySeeder extends Seeder
 {
     public function run()
     {
-        $this->currencies()->each(function ($currency) {
-            Currency::create($currency);
-        });
+        $this->currencies()
+            ->each(fn($currency) => Currency::create($currency));
     }
 
     public function currencies()
