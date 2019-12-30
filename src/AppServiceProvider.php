@@ -3,9 +3,9 @@
 namespace LaravelEnso\Currencies;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Currencies\app\Commands\FetchExchangeRates;
-use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Currencies\app\Observers\Observer;
+use LaravelEnso\Currencies\App\Commands\FetchExchangeRates;
+use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Currencies\App\Observers\Observer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,9 +14,7 @@ class AppServiceProvider extends ServiceProvider
         $this->load()
             ->publish()
             ->observe()
-            ->commands([
-                FetchExchangeRates::class,
-            ]);
+            ->commands([FetchExchangeRates::class]);
     }
 
     private function load()
@@ -34,27 +32,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/database/factories' => database_path('factories'),
-        ], 'currency-factories');
-
-        $this->publishes([
-            __DIR__.'/database/factories' => database_path('factories'),
-        ], 'enso-factories');
+        ], ['currency-factories', 'enso-factories']);
 
         $this->publishes([
             __DIR__.'/database/seeds' => database_path('seeds'),
-        ], 'currency-seeder');
-
-        $this->publishes([
-            __DIR__.'/database/seeds' => database_path('seeds'),
-        ], 'enso-seeders');
+        ], ['currency-seeder', 'enso-seeders']);
 
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
-        ], 'currencies-config');
-
-        $this->publishes([
-            __DIR__.'/config' => config_path('enso'),
-        ], 'enso-config');
+        ], ['currencies-config', 'enso-config']);
 
         return $this;
     }

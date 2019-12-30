@@ -1,15 +1,15 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Commands;
+namespace LaravelEnso\Currencies\App\Commands;
 
 use Illuminate\Console\Command;
-use LaravelEnso\Currencies\app\Jobs\FetchExchangeRates as Job;
+use LaravelEnso\Currencies\App\Jobs\FetchExchangeRates as Job;
 
 class FetchExchangeRates extends Command
 {
     protected $signature = 'enso:currencies:fetch-exchange-rates';
 
-    protected $description = 'Fetches latest exchange rates through API';
+    protected $description = 'Fetches the latest exchange rates through API';
 
     public function handle()
     {

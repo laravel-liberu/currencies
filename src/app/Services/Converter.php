@@ -1,18 +1,18 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Services;
+namespace LaravelEnso\Currencies\App\Services;
 
 use Carbon\Carbon;
-use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Helpers\app\Classes\Decimals;
+use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Helpers\App\Classes\Decimals;
 
 class Converter
 {
-    private $date;
-    private $from;
-    private $to;
+    private Carbon $date;
+    private Currency $from;
+    private Currency $to;
     private $amount;
-    private $precision;
+    private int $precision;
 
     public function __construct()
     {
@@ -67,10 +67,31 @@ class Converter
 
     private function rate()
     {
+        return $this->todayRate() ?? $this->mostRecentRate();
+    }
+
+    private function todayRate()
+    {
+        if (! $this->from) {
+            $this->from = Currency::default()->first();
+        }
+
+        if (! $this->to) {
+            $this->to = Currency::default()->first();
+        }
+
         return $this->from->fromExchangeRates()
             ->whereToId($this->to->id)
-            ->whereDate('date', '>=', $this->date)
-            ->orderBy('date')
+            ->whereDate('date', $this->date)
+            ->orderByDesc('date')
+            ->first();
+    }
+
+    private function mostRecentRate()
+    {
+        return $this->from->fromExchangeRates()
+            ->whereToId($this->to->id)
+            ->orderByDesc('date')
             ->first();
     }
 }

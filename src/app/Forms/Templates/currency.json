@@ -1,39 +1,46 @@
 {
     "routePrefix": "administration.currencies",
-    "sections": [{
-        "columns": 2,
-        "fields": [{
-            "label": "Short Name",
-            "name": "short_name",
-            "value": null,
-            "meta": {
-                "type": "input",
-                "content": "text"
-            }
-        }, {
-            "label": "Name",
-            "name": "name",
-            "value": null,
-            "meta": {
-                "type": "input",
-                "content": "text"
-            }
-        }, {
-            "label": "Symbol",
-            "name": "symbol",
-            "value": null,
-            "meta": {
-                "type": "input",
-                "content": "text"
-            }
-        }, {
-            "label": "Default",
-            "name": "is_default",
-            "value": false,
-            "meta": {
-                "type": "input",
-                "content": "checkbox"
-            }
-        }]
-    }]
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Code",
+                    "name": "code",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Name",
+                    "name": "name",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Symbol",
+                    "name": "symbol",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Default",
+                    "name": "is_default",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        }
+    ]
 }

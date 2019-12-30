@@ -1,15 +1,15 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Forms\Builders;
+namespace LaravelEnso\Currencies\App\Forms\Builders;
 
-use LaravelEnso\Currencies\app\Models\ExchangeRate;
-use LaravelEnso\Forms\app\Services\Form;
+use LaravelEnso\Currencies\App\Models\ExchangeRate;
+use LaravelEnso\Forms\App\Services\Form;
 
 class ExchangeRateForm
 {
     private const TemplatePath = __DIR__.'/../Templates/exchangeRate.json';
 
-    private $form;
+    private Form $form;
 
     public function __construct()
     {

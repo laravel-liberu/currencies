@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Http\Controllers\ExchangeRates;
+namespace LaravelEnso\Currencies\App\Http\Controllers\ExchangeRates;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Forms\Builders\ExchangeRateForm;
+use LaravelEnso\Currencies\App\Forms\Builders\ExchangeRateForm;
 
 class Create extends Controller
 {

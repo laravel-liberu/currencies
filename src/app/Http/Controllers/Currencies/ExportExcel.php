@@ -1,10 +1,10 @@
 <?php
 
-namespace  LaravelEnso\Currencies\app\Http\Controllers\Currencies;
+namespace LaravelEnso\Currencies\App\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Tables\Builders\CurrencyTable;
-use LaravelEnso\Tables\app\Traits\Excel;
+use LaravelEnso\Currencies\App\Tables\Builders\CurrencyTable;
+use LaravelEnso\Tables\App\Traits\Excel;
 
 class ExportExcel extends Controller
 {

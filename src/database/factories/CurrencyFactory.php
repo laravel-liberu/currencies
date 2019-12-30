@@ -1,13 +1,17 @@
 <?php
 
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
-use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Countries\App\Models\Country;
+use LaravelEnso\Currencies\App\Models\Currency;
 
 $factory->define(Currency::class, function (Faker $faker) {
+    $country = Country::whereNotIn(
+        'currency_code', Currency::pluck('code')->toArray()
+    )->inRandomOrder()->first();
+
     return [
-        'short_name' => Str::upper($faker->unique()->randomLetter),
-        'name' => Str::upper($faker->unique()->word),
+        'code' => $country->currency_code,
+        'name' => $country->currency,
         'symbol' => $faker->unique()->randomLetter,
         'is_default' => Currency::default()->first() === null,
     ];

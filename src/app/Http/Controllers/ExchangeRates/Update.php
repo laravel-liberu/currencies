@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Http\Controllers\ExchangeRates;
+namespace LaravelEnso\Currencies\App\Http\Controllers\ExchangeRates;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Http\Requests\ExchangeRates\ValidateExchangeRateRequest;
-use LaravelEnso\Currencies\app\Models\ExchangeRate;
+use LaravelEnso\Currencies\App\Http\Requests\ExchangeRates\ValidateExchangeRateRequest;
+use LaravelEnso\Currencies\App\Models\ExchangeRate;
 
 class Update extends Controller
 {

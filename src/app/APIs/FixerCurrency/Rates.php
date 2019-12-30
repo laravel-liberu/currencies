@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
 class Rates extends Exchange
 {
@@ -16,7 +16,7 @@ class Rates extends Exchange
     private function query()
     {
         return [
-            'base' => $this->base->short_name,
+            'base' => $this->base->code,
             'symbols' => $this->symbols(),
         ];
     }

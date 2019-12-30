@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Http\Resources;
+namespace LaravelEnso\Currencies\App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,7 +11,7 @@ class Currency extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'shortName' => $this->short_name,
+            'code' => $this->code,
             'symbol' => $this->symbol,
             'isDefault' => $this->is_default,
         ];

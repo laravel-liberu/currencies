@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Observers;
+namespace LaravelEnso\Currencies\App\Observers;
 
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Currencies\app\Exceptions\CurrencyException;
-use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Currencies\App\Exceptions\Currency as Exception;
+use LaravelEnso\Currencies\App\Models\Currency;
 
 class Observer
 {
@@ -32,7 +32,7 @@ class Observer
     public function deleting(Currency $currency)
     {
         if ($currency->is_default && Currency::count() > 1) {
-            throw new CurrencyException('You cannot delete the default currency!');
+            throw Exception::cannotDeleteDefault();
         }
     }
 }

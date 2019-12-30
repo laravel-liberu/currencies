@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
 class Symbols
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
-use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Currencies\App\Models\Currency;
 
 class Convert
 {
@@ -31,8 +31,8 @@ class Convert
     private function query()
     {
         return [
-            'from' => $this->from->short_name,
-            'to' => $this->to->short_name,
+            'from' => $this->from->code,
+            'to' => $this->to->code,
             'amount' => $this->amount,
         ];
     }

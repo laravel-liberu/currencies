@@ -1,11 +1,12 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Services;
+namespace LaravelEnso\Currencies\App\Services;
 
-use LaravelEnso\Currencies\app\APIs\FixerCurrency\Rates;
-use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Currencies\app\Models\ExchangeRate;
-use LaravelEnso\Helpers\app\Classes\Decimals;
+use Illuminate\Support\Collection;
+use LaravelEnso\Currencies\App\APIs\FixerCurrency\Rates;
+use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Currencies\App\Models\ExchangeRate;
+use LaravelEnso\Helpers\App\Classes\Decimals;
 
 class FetchExchangeRates
 {
@@ -28,39 +29,44 @@ class FetchExchangeRates
 
         $this->currencies = Currency::all();
 
-        $this->process();
+        $this->processAll();
 
         return $this;
     }
 
-    private function process()
+    private function processAll()
     {
-        collect($this->response->rates)->each(function ($conversion, $currency) {
-            $to = $this->currency($currency);
-
-            $this->persist($this->base, $to, $conversion);
-
-            $reverseConversion = Decimals::div(1, $conversion, Converter::Precision);
-
-            $this->persist($to, $this->base, $reverseConversion);
-        });
+        (new Collection($this->response->rates))
+            ->each(fn ($rate, $currency) => $this->process($rate, $currency));
     }
 
-    private function persist(Currency $from, Currency $to, $conversion)
+    private function process($rate, $currency)
+    {
+        $to = $this->currency($currency);
+
+        $this->persist($this->base, $to, $rate);
+
+        $reverseRate = Decimals::div(
+            1, $rate, config('enso.currencies.converterPrecision')
+        );
+
+        $this->persist($to, $this->base, $reverseRate);
+    }
+
+    private function persist(Currency $from, Currency $to, $rate)
     {
         ExchangeRate::updateOrCreate([
             'from_id' => $from->id,
             'to_id' => $to->id,
             'date' => $this->response->date,
         ], [
-            'conversion' => $conversion,
+            'conversion' => $rate,
         ]);
     }
 
-    private function currency(string $shortName)
+    private function currency(string $code)
     {
-        return $this->currencies->first(function ($currency) use ($shortName) {
-            return $currency->short_name === $shortName;
-        });
+        return $this->currencies
+            ->first(fn ($currency) => $currency->code === $code);
     }
 }

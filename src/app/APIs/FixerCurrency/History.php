@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
 use Carbon\Carbon;
-use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Currencies\App\Models\Currency;
 
 class History extends Exchange
 {

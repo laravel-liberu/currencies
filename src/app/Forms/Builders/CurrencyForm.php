@@ -1,15 +1,15 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Forms\Builders;
+namespace LaravelEnso\Currencies\App\Forms\Builders;
 
-use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Forms\app\Services\Form;
+use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Forms\App\Services\Form;
 
 class CurrencyForm
 {
     private const TemplatePath = __DIR__.'/../Templates/currency.json';
 
-    private $form;
+    private Form $form;
 
     public function __construct()
     {

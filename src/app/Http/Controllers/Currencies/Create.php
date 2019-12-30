@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
+namespace LaravelEnso\Currencies\App\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Forms\Builders\CurrencyForm;
+use LaravelEnso\Currencies\App\Forms\Builders\CurrencyForm;
 
 class Create extends Controller
 {

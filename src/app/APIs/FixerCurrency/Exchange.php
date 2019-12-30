@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
 use Illuminate\Support\Collection;
-use LaravelEnso\Currencies\app\Models\Currency;
+use LaravelEnso\Currencies\App\Models\Currency;
 
 abstract class Exchange
 {
@@ -22,10 +22,10 @@ abstract class Exchange
     {
         $collection = $this->currencies instanceof Collection
             ? $this->currencies
-            : collect([$this->currencies]);
+            : new Collection([$this->currencies]);
 
-        return $collection->map(function (Currency $currency) {
-            return $currency->short_name;
-        })->implode(',');
+        return $collection
+            ->map(fn (Currency $currency) => $currency->code)
+            ->implode(',');
     }
 }

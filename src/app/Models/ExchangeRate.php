@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Models;
+namespace LaravelEnso\Currencies\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Tables\app\Traits\TableCache;
+use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 class ExchangeRate extends Model
 {

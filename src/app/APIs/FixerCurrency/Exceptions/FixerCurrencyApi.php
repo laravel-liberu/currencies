@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\APIs\Exceptions;
+namespace LaravelEnso\Currencies\App\APIs\Exceptions;
 
 use Exception;
 
-class FixerCurrencyApiException extends Exception
+class FixerCurrencyApi extends Exception
 {
     public static function unableToConnect($code)
     {

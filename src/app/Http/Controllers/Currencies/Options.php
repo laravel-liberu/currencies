@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\app\Http\Controllers\Currencies;
+namespace LaravelEnso\Currencies\App\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\app\Http\Resources\Currency as Resource;
-use LaravelEnso\Currencies\app\Models\Currency;
-use LaravelEnso\Select\app\Traits\OptionsBuilder;
+use LaravelEnso\Currencies\App\Http\Resources\Currency as Resource;
+use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Select\App\Traits\OptionsBuilder;
 
 class Options extends Controller
 {
@@ -15,5 +15,5 @@ class Options extends Controller
 
     protected $resource = Resource::class;
 
-    protected $queryAttributes = ['name', 'short_name'];
+    protected $queryAttributes = ['name', 'code'];
 }

@@ -2,27 +2,48 @@
     "name": "Currency",
     "routePrefix": "administration.currencies",
     "crtNo": true,
-    "buttons": ["excel", "create", "edit", "destroy"],
-    "columns": [{
-        "label": "Short Name",
-        "name": "short_name",
-        "data": "short_name",
-        "meta": ["searchable", "sortable"]
-    }, {
-        "label": "Name",
-        "name": "name",
-        "data": "name",
-        "meta": ["searchable", "sortable"]
-    }, {
-        "label": "Symbol",
-        "name": "symbol",
-        "data": "symbol",
-        "meta": ["searchable", "sortable"],
-        "class": "tag is-warning is-table-tag"
-    }, {
-        "label": "Default",
-        "name": "is_default",
-        "data": "is_default",
-        "meta": ["boolean"]
-    }]
+    "buttons": [
+        "excel",
+        "create",
+        "edit",
+        "destroy"
+    ],
+    "columns": [
+        {
+            "label": "Code",
+            "name": "code",
+            "data": "code",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "name",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Symbol",
+            "name": "symbol",
+            "data": "symbol",
+            "meta": [
+                "searchable",
+                "sortable"
+            ],
+            "class": "tag is-warning is-table-tag"
+        },
+        {
+            "label": "Default",
+            "name": "is_default",
+            "data": "is_default",
+            "meta": [
+                "boolean"
+            ]
+        }
+    ]
 }
