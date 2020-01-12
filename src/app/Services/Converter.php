@@ -4,11 +4,13 @@ namespace LaravelEnso\Currencies\App\Services;
 
 use Carbon\Carbon;
 use LaravelEnso\Currencies\App\Models\Currency;
+use LaravelEnso\Currencies\App\Models\ExchangeRate;
 use LaravelEnso\Helpers\App\Classes\Decimals;
 
 class Converter
 {
     private Carbon $date;
+    private Currency $default;
     private Currency $from;
     private Currency $to;
     private $amount;
@@ -70,28 +72,35 @@ class Converter
         return $this->todayRate() ?? $this->mostRecentRate();
     }
 
-    private function todayRate()
+    private function todayRate(): ?ExchangeRate
     {
-        if (! $this->from) {
-            $this->from = Currency::default()->first();
-        }
-
-        if (! $this->to) {
-            $this->to = Currency::default()->first();
-        }
-
-        return $this->from->fromExchangeRates()
-            ->whereToId($this->to->id)
+        return $this->fromCurrency()->fromExchangeRates()
+            ->whereToId($this->toCurrency()->id)
             ->whereDate('date', $this->date)
             ->orderByDesc('date')
             ->first();
     }
 
-    private function mostRecentRate()
+    private function mostRecentRate(): ExchangeRate
     {
-        return $this->from->fromExchangeRates()
-            ->whereToId($this->to->id)
+        return $this->fromCurrency()->fromExchangeRates()
+            ->whereToId($this->toCurrency()->id)
             ->orderByDesc('date')
             ->first();
+    }
+
+    private function fromCurrency(): Currency
+    {
+        return $this->from ??= $this->default();
+    }
+
+    private function toCurrency(): Currency
+    {
+        return $this->to ??= $this->default();
+    }
+
+    private function default(): Currency
+    {
+        return $this->default ??= Currency::query()->default()->first();
     }
 }
