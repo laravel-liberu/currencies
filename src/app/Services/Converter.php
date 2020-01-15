@@ -3,6 +3,7 @@
 namespace LaravelEnso\Currencies\App\Services;
 
 use Carbon\Carbon;
+use LaravelEnso\Currencies\App\Exceptions\Conversion;
 use LaravelEnso\Currencies\App\Models\Currency;
 use LaravelEnso\Currencies\App\Models\ExchangeRate;
 use LaravelEnso\Helpers\App\Classes\Decimals;
@@ -23,53 +24,61 @@ class Converter
         $this->precision = config('enso.currencies.converterPrecision');
     }
 
-    public function handle()
+    public function handle(): string
     {
-        return Decimals::mul(
-            $this->amount,
-            optional($this->rate())->conversion,
-            $this->precision
-        );
+        return $this->from->is($this->to)
+            ? $this->amount
+            : Decimals::mul(
+                $this->amount,
+                $this->rate()->conversion,
+                $this->precision
+            );
     }
 
-    public function from(Currency $from)
+    public function from(Currency $from): self
     {
         $this->from = $from;
 
         return $this;
     }
 
-    public function to(Currency $to)
+    public function to(Currency $to): self
     {
         $this->to = $to;
 
         return $this;
     }
 
-    public function amount($amount)
+    public function amount($amount): self
     {
         $this->amount = $amount;
 
         return $this;
     }
 
-    public function date(Carbon $date)
+    public function date(Carbon $date): self
     {
         $this->date = $date;
 
         return $this;
     }
 
-    public function precision(int $precision)
+    public function precision(int $precision): self
     {
         $this->precision = $precision;
 
         return $this;
     }
 
-    private function rate()
+    private function rate(): ExchangeRate
     {
-        return $this->todayRate() ?? $this->mostRecentRate();
+        $rate = $this->todayRate() ?? $this->mostRecentRate();
+
+        if (! $rate) {
+            throw Conversion::missingExchangeRate($this->from, $this->to);
+        }
+
+        return $rate;
     }
 
     private function todayRate(): ?ExchangeRate
