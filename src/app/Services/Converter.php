@@ -26,13 +26,11 @@ class Converter
 
     public function handle(): string
     {
-        return $this->from->is($this->to)
-            ? $this->amount
-            : Decimals::mul(
-                $this->amount,
-                $this->rate()->conversion,
-                $this->precision
-            );
+        return Decimals::mul(
+            $this->amount,
+            $this->rate()->conversion,
+            $this->precision
+        );
     }
 
     public function from(Currency $from): self
@@ -78,7 +76,9 @@ class Converter
             throw Conversion::missingExchangeRate($this->from, $this->to);
         }
 
-        return $rate;
+        return $this->from->is($this->to)
+            ? new ExchangeRate(['conversion' => 1])
+            : $rate;
     }
 
     private function todayRate(): ?ExchangeRate
