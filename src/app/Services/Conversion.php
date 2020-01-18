@@ -3,12 +3,12 @@
 namespace LaravelEnso\Currencies\App\Services;
 
 use Carbon\Carbon;
-use LaravelEnso\Currencies\App\Exceptions\Conversion;
+use LaravelEnso\Currencies\App\Exceptions\Conversion as Exception;
 use LaravelEnso\Currencies\App\Models\Currency;
 use LaravelEnso\Currencies\App\Models\ExchangeRate;
 use LaravelEnso\Helpers\App\Classes\Decimals;
 
-class Converter
+class Conversion
 {
     private Carbon $date;
     private Currency $default;
@@ -20,17 +20,13 @@ class Converter
     public function __construct()
     {
         $this->date = Carbon::today();
-
         $this->precision = config('enso.currencies.converterPrecision');
     }
 
     public function handle(): string
     {
-        return Decimals::mul(
-            $this->amount,
-            $this->rate()->conversion,
-            $this->precision
-        );
+        return $this->init()
+            ->convert();
     }
 
     public function from(Currency $from): self
@@ -68,17 +64,41 @@ class Converter
         return $this;
     }
 
+    private function init(): self
+    {
+        if (! isset($this->from)) {
+            $this->from = $this->default();
+        }
+
+        if (! isset($this->to)) {
+            $this->to = $this->default();
+        }
+
+        return $this;
+    }
+
+    private function convert(): string
+    {
+        return Decimals::mul(
+            $this->amount,
+            $this->rate()->conversion,
+            $this->precision
+        );
+    }
+
     private function rate(): ExchangeRate
     {
+        if ($this->from->is($this->to)) {
+            return new ExchangeRate(['conversion' => 1]);
+        }
+
         $rate = $this->todayRate() ?? $this->mostRecentRate();
 
         if (! $rate) {
-            throw Conversion::missingExchangeRate($this->from, $this->to);
+            throw Exception::missingExchangeRate($this->from, $this->to);
         }
 
-        return $this->from->is($this->to)
-            ? new ExchangeRate(['conversion' => 1])
-            : $rate;
+        return $rate;
     }
 
     private function todayRate(): ?ExchangeRate
