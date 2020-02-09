@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\App\Http\Requests\Currencies;
+namespace LaravelEnso\Currencies\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;

@@ -28,7 +28,7 @@
             ]
         },
         {
-            "label": "Converstion Rate",
+            "label": "Conversion Rate",
             "name": "conversion",
             "data": "conversion",
             "meta": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\App\Http\Requests\ExchangeRates;
+namespace LaravelEnso\Currencies\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
@@ -29,13 +29,15 @@ class ValidateExchangeRateRequest extends FormRequest
         $validator->after(function ($validator) {
             if ($this->filled('date') && $this->exchangeRate()->first()) {
                 $validator->errors()->add(
-                    'date', __('This exchange rate is already defined for the specified date!')
+                    'date',
+                    __('This exchange rate is already defined for the specified date!')
                 );
             }
 
             if ($this->missingDefault()) {
-                (new Collection(['from_id', 'to_id']))->each(fn ($field) => $validator->errors()
-                    ->add($field, __('The exchange rate must use your default currency!'))
+                (new Collection(['from_id', 'to_id']))->each(
+                    fn ($field) => $validator->errors()
+                        ->add($field, __('The exchange rate must use your default currency!'))
                 );
             }
         });
@@ -52,6 +54,7 @@ class ValidateExchangeRateRequest extends FormRequest
     protected function missingDefault()
     {
         return ! (new Collection([$this->get('to_id'), $this->get('from_id')]))
-            ->contains(Currency::default()->first()->id);
+            ->contains(Currency::
+                default()->first()->id);
     }
 }
