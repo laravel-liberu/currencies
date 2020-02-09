@@ -32,16 +32,8 @@ class CurrencySeeder extends Seeder
 
     public function run()
     {
-        $this->currencies()
-            ->each(fn ($currency) => Currency::create($currency));
-    }
-
-    public function currencies()
-    {
-        return (new Collection())
-            ->when(
-                ! App::environment('testing'),
-                fn ($collection) => $collection->concat(self::Currencies)
-            );
+        (new Collection(self::Currencies))
+            ->when(! App::environment('testing'), fn ($currencies) => $currencies
+                ->each(fn ($currency) => Currency::create($currency)));
     }
 }
