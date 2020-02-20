@@ -12,6 +12,11 @@ class Update extends Controller
     {
         $currency->update($request->validated());
 
+        if ($currency->is_default && $currency->wasChanged('is_default')) {
+            Currency::where('id', '<>', $currency->id)
+                ->update(['is_default' => false]);
+        }
+
         return ['message' => __('The currency was successfully updated')];
     }
 }

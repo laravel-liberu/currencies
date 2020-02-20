@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\Currencies\App\Observers;
 
-use Illuminate\Support\Facades\DB;
 use LaravelEnso\Currencies\App\Exceptions\Currency as Exception;
 use LaravelEnso\Currencies\App\Models\Currency;
 
@@ -10,23 +9,7 @@ class Observer
 {
     public function creating(Currency $currency)
     {
-        $currency->is_default = Currency::default()->first() === null;
-    }
-
-    public function updating(Currency $currency)
-    {
-        if ($currency->is_default) {
-            DB::beginTransaction();
-            Currency::where('id', '<>', $currency->id)
-                ->update(['is_default' => false]);
-        }
-    }
-
-    public function updated(Currency $currency)
-    {
-        if ($currency->is_default) {
-            DB::commit();
-        }
+        $currency->is_default = ! Currency::query()->default()->exists();
     }
 
     public function deleting(Currency $currency)
