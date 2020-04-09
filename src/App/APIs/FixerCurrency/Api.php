@@ -3,7 +3,7 @@
 namespace LaravelEnso\Currencies\App\APIs\FixerCurrency;
 
 use GuzzleHttp\Client;
-use LaravelEnso\Currencies\App\APIs\Exceptions\FixerCurrencyApi;
+use LaravelEnso\Currencies\App\APIs\FixerCurrency\Exceptions\FixerCurrencyApi;
 
 class Api
 {

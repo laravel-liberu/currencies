@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\App\APIs\Exceptions;
+namespace LaravelEnso\Currencies\App\APIs\FixerCurrency\Exceptions;
 
 use Exception;
 
