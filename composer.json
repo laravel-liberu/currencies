@@ -2,6 +2,7 @@
     "name": "laravel-enso/currencies",
     "type": "library",
     "description": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ionut-Catalin Sandu",
