@@ -33,9 +33,9 @@
             "data": "symbol",
             "meta": [
                 "searchable",
-                "sortable"
-            ],
-            "class": "tag is-warning is-table-tag"
+                "sortable",
+                "slot"
+            ]
         },
         {
             "label": "Default",
