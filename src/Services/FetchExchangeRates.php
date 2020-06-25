@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Config;
 use LaravelEnso\Currencies\APIs\FixerCurrency\Rates;
 use LaravelEnso\Currencies\Models\Currency;
 use LaravelEnso\Currencies\Models\ExchangeRate;
-use LaravelEnso\Helpers\Classes\Decimals;
+use LaravelEnso\Helpers\Services\Decimals;
 
 class FetchExchangeRates
 {

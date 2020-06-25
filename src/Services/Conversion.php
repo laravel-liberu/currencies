@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use LaravelEnso\Currencies\Exceptions\Conversion as Exception;
 use LaravelEnso\Currencies\Models\Currency;
 use LaravelEnso\Currencies\Models\ExchangeRate;
-use LaravelEnso\Helpers\Classes\Decimals;
+use LaravelEnso\Helpers\Services\Decimals;
 
 class Conversion
 {
