@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use LaravelEnso\Core\App\Models\User;
-use LaravelEnso\Currencies\App\Models\Currency;
-use LaravelEnso\Forms\App\TestTraits\CreateForm;
-use LaravelEnso\Forms\App\TestTraits\DestroyForm;
-use LaravelEnso\Forms\App\TestTraits\EditForm;
-use LaravelEnso\Tables\App\Traits\Tests\Datatable;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\Currencies\Models\Currency;
+use LaravelEnso\Forms\TestTraits\CreateForm;
+use LaravelEnso\Forms\TestTraits\DestroyForm;
+use LaravelEnso\Forms\TestTraits\EditForm;
+use LaravelEnso\Tables\Traits\Tests\Datatable;
 use Tests\TestCase;
 
 class CurrencyTest extends TestCase
@@ -58,7 +58,7 @@ class CurrencyTest extends TestCase
             route('administration.currencies.update', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
-        ->assertJsonStructure(['message']);
+            ->assertJsonStructure(['message']);
 
         $this->assertEquals(
             $this->testModel->name,
@@ -75,7 +75,7 @@ class CurrencyTest extends TestCase
             'query' => $this->testModel->name,
             'limit' => 10,
         ], false))
-        ->assertStatus(200)
-        ->assertJsonFragment(['name' => $this->testModel->name]);
+            ->assertStatus(200)
+            ->assertJsonFragment(['name' => $this->testModel->name]);
     }
 }

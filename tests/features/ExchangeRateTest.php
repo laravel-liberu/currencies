@@ -1,12 +1,13 @@
 <?php
+
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use LaravelEnso\Core\App\Models\User;
-use LaravelEnso\Currencies\App\Models\Currency;
-use LaravelEnso\Currencies\App\Models\ExchangeRate;
-use LaravelEnso\Forms\App\TestTraits\CreateForm;
-use LaravelEnso\Forms\App\TestTraits\DestroyForm;
-use LaravelEnso\Forms\App\TestTraits\EditForm;
-use LaravelEnso\Tables\App\Traits\Tests\Datatable;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\Currencies\Models\Currency;
+use LaravelEnso\Currencies\Models\ExchangeRate;
+use LaravelEnso\Forms\TestTraits\CreateForm;
+use LaravelEnso\Forms\TestTraits\DestroyForm;
+use LaravelEnso\Forms\TestTraits\EditForm;
+use LaravelEnso\Tables\Traits\Tests\Datatable;
 use Tests\TestCase;
 
 class ExchangeRateTest extends TestCase
@@ -67,7 +68,7 @@ class ExchangeRateTest extends TestCase
             route('administration.exchangeRates.update', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
-        ->assertJsonStructure(['message']);
+            ->assertJsonStructure(['message']);
 
         $this->assertEquals(
             $this->testModel->conversion,
