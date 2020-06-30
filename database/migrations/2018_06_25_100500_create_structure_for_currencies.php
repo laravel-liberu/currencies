@@ -25,5 +25,5 @@ class CreateStructureForCurrencies extends Migration
         'name' => 'Currencies', 'icon' => 'far money-bill-alt', 'route' => 'administration.currencies.index', 'order_index' => 325, 'has_children' => false,
     ];
 
-    protected string $parentMenu = 'Administration';
+    protected ?string $parentMenu = 'Administration';
 }
