@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Currencies\Exceptions;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class Currency extends Model
 {
-    use AvoidsDeletionConflicts, TableCache;
+    use AvoidsDeletionConflicts, HasFactory, TableCache;
 
     protected $guarded = ['id'];
 

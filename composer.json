@@ -24,7 +24,7 @@
     ],
     "homepage": "https://github.com/laravel-enso/currencies",
     "require": {
-        "laravel-enso/core": "^5.0",
+        "laravel-enso/core": "^6.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/helpers": "^2.0",
         "laravel-enso/select": "^4.0",
@@ -34,7 +34,9 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelEnso\\Currencies\\": "src/"
+            "LaravelEnso\\Currencies\\": "src/",
+            "LaravelEnso\\Currencies\\Database\\Factories\\": "database/factories/",
+            "LaravelEnso\\Currencies\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {

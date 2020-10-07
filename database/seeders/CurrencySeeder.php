@@ -1,5 +1,7 @@
 <?php
 
+namespace LaravelEnso\Currencies\Database\Factories;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;

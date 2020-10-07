@@ -25,7 +25,7 @@ class CurrencyTest extends TestCase
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = factory(Currency::class)
+        $this->testModel = Currency::factory()
             ->make();
     }
 
