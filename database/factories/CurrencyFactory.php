@@ -1,20 +1,28 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace LaravelEnso\Currencies\Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Currencies\Models\Currency;
 
-$factory->define(Currency::class, function (Faker $faker) {
-    $country = Country::whereNotIn(
-        'currency_code',
-        Currency::pluck('code')->toArray()
-    )->inRandomOrder()->first();
+class CurrencyFactory extends Factory
+{
+    protected $model = Currency::class;
 
-    return [
-        'code' => $country->currency_code,
-        'name' => $country->currency,
-        'symbol' => $faker->unique()->randomLetter,
-        'is_default' => Currency::
-        default()->first() === null,
-    ];
-});
+    public function definition()
+    {
+        $country = Country::whereNotIn(
+            'currency_code',
+            Currency::pluck('code')->toArray()
+        )->inRandomOrder()->first();
+
+        return [
+            'code' => $country->currency_code,
+            'name' => $country->currency,
+            'symbol' => $this->faker->unique()->randomLetter,
+            'is_default' => Currency::
+                default()->first() === null,
+        ];
+    }
+}

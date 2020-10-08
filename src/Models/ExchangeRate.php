@@ -4,11 +4,12 @@ namespace LaravelEnso\Currencies\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class ExchangeRate extends Model
 {
-    use AvoidsDeletionConflicts, TableCache;
+    use AvoidsDeletionConflicts, HasFactory, TableCache;
 
     protected $guarded = ['id'];
 

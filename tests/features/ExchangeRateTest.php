@@ -28,10 +28,10 @@ class ExchangeRateTest extends TestCase
         $this->seed()
             ->actingAs(User::first());
 
-        $this->from = factory(Currency::class)->create();
+        $this->from = Currency::factory()->create();
         $this->from->update(['is_default' => true]);
-        $this->to = factory(Currency::class)->create();
-        $this->testModel = factory(ExchangeRate::class)->make([
+        $this->to = Currency::factory()->create();
+        $this->testModel = ExchangeRate::factory()->make([
             'from_id' => $this->from->id,
             'to_id' => $this->to->id,
         ]);
