@@ -2,11 +2,11 @@
 
 namespace LaravelEnso\Currencies\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Currencies\Exceptions;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class Currency extends Model
