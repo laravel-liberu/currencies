@@ -2,9 +2,9 @@
 
 namespace LaravelEnso\Currencies\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class ExchangeRate extends Model
