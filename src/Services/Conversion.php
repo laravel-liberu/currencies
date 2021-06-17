@@ -3,6 +3,7 @@
 namespace LaravelEnso\Currencies\Services;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 use LaravelEnso\Currencies\Exceptions\Conversion as Exception;
 use LaravelEnso\Currencies\Models\Currency;
 use LaravelEnso\Currencies\Models\ExchangeRate;
@@ -20,13 +21,12 @@ class Conversion
     public function __construct()
     {
         $this->date = Carbon::today();
-        $this->precision = config('enso.currencies.converterPrecision');
+        $this->precision = Config::get('enso.currencies.converterPrecision');
     }
 
     public function handle(): string
     {
-        return $this->init()
-            ->convert();
+        return $this->init()->convert();
     }
 
     public function from(Currency $from): self
@@ -66,24 +66,17 @@ class Conversion
 
     private function init(): self
     {
-        if (! isset($this->from)) {
-            $this->from = $this->default();
-        }
-
-        if (! isset($this->to)) {
-            $this->to = $this->default();
-        }
+        $this->from ??= $this->default();
+        $this->to ??= $this->default();
 
         return $this;
     }
 
     private function convert(): string
     {
-        return Decimals::mul(
-            $this->amount,
-            $this->rate()->conversion,
-            $this->precision
-        );
+        $args = [$this->amount, $this->rate()->conversion, $this->precision];
+
+        return Decimals::mul(...$args);
     }
 
     private function rate(): ExchangeRate

@@ -11,14 +11,14 @@ use LaravelEnso\Helpers\Services\Decimals;
 
 class FetchExchangeRates
 {
-    private $base;
-    private $toCurrencies;
     private $currencies;
     private $response;
     private $precision;
 
-    public function __construct(Currency $base, $toCurrencies)
-    {
+    public function __construct(
+        private Currency $base,
+        private $toCurrencies
+    ) {
         $this->base = $base;
         $this->toCurrencies = $toCurrencies;
         $this->precision = Config::get('enso.currencies.apiPrecision');
@@ -26,10 +26,7 @@ class FetchExchangeRates
 
     public function handle()
     {
-        $this->response = (new Rates(
-            $this->base,
-            $this->toCurrencies
-        ))->handle();
+        $this->response = (new Rates($this->base, $this->toCurrencies))->handle();
 
         $this->currencies = Currency::all();
 

@@ -5,7 +5,7 @@ namespace LaravelEnso\Currencies\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Countries\Models\Country;
-use LaravelEnso\Currencies\Exceptions;
+use LaravelEnso\Currencies\Exceptions\Currency as Exception;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Tables\Traits\TableCache;
 
@@ -56,7 +56,7 @@ class Currency extends Model
     private function checkDefault()
     {
         if ($this->is_default && self::count() > 1) {
-            throw Exceptions\Currency::cannotDeleteDefault();
+            throw Exception::cannotDeleteDefault();
         }
     }
 }

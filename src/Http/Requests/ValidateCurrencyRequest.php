@@ -28,6 +28,6 @@ class ValidateCurrencyRequest extends FormRequest
     protected function unique($attribute)
     {
         return Rule::unique('currencies', $attribute)
-            ->ignore(optional($this->route('currency'))->id);
+            ->ignore($this->route('currency'));
     }
 }

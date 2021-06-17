@@ -2,63 +2,38 @@
 
 namespace LaravelEnso\Currencies\APIs\FixerCurrency;
 
-use GuzzleHttp\Client;
-use LaravelEnso\Currencies\APIs\FixerCurrency\Exceptions\FixerCurrencyApi;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
 
 class Api
 {
-    private $client;
-    private $endPoint;
-    private $query;
+    private string $endPoint;
+    private array $query;
 
-    public function __construct()
+    public function request(): array
     {
-        $this->client = new Client([
-            'base_uri' => config('enso.currencies.fixerCurrencyApi.host'),
-            'headers' => $this->headers(),
-        ]);
+        return Http::withHeaders($this->headers())
+            ->get($this->endPoint, $this->query)
+            ->throw()
+            ->json();
     }
 
-    public function request()
-    {
-        $response = $this->client->get($this->endPoint, ['query' => $this->query]);
-
-        return $this->body($response);
-    }
-
-    public function endPoint($endPoint)
+    public function endPoint(string $endPoint): self
     {
         $this->endPoint = $endPoint;
 
         return $this;
     }
 
-    public function query($query)
+    public function query(array $query): self
     {
         $this->query = $query;
 
         return $this;
     }
 
-    private function body($response)
-    {
-        if ($response->getStatusCode() !== 200) {
-            throw FixerCurrencyApi::unableToConnect(
-                $response->getStatusCode()
-            );
-        }
-
-        $body = json_decode($response->getBody());
-
-        if (! $body->success) {
-            throw FixerCurrencyApi::error($body->code, $body->type);
-        }
-
-        return $body;
-    }
-
     private function headers()
     {
-        return ['x-rapidapi-key' => config('enso.currencies.fixerCurrencyApi.key')];
+        return ['x-rapidapi-key' => Config::get('enso.currencies.fixerCurrencyApi.key')];
     }
 }

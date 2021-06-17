@@ -25,10 +25,8 @@ class FetchExchangeRates implements ShouldQueue
 
     public function handle()
     {
-        (new Service(
-            Currency::
-            default()->first(),
-            Currency::foreign()->get()
-        ))->handle();
+        $args = [Currency::default()->first(), Currency::foreign()->get()];
+
+        (new Service(...$args))->handle();
     }
 }

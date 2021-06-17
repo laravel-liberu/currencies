@@ -3,7 +3,8 @@
     "type": "library",
     "description": "",
     "license": "MIT",
-    "authors": [{
+    "authors": [
+        {
             "name": "Ionut-Catalin Sandu",
             "email": "catalin.sandu@earthlink.com",
             "homepage": "https://laravel-enso.com",
@@ -24,7 +25,7 @@
     ],
     "homepage": "https://github.com/laravel-enso/currencies",
     "require": {
-        "laravel-enso/core": "^6.0",
+        "laravel-enso/core": "^7.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/helpers": "^2.0",
         "laravel-enso/select": "^4.0",

@@ -28,10 +28,8 @@ class ValidateExchangeRateRequest extends FormRequest
     {
         $validator->after(function ($validator) {
             if ($this->filled('date') && $this->exchangeRate()->first()) {
-                $validator->errors()->add(
-                    'date',
-                    __('This exchange rate is already defined for the specified date!')
-                );
+                $error = __('This exchange rate is already defined for the specified date!');
+                $validator->errors()->add('date', $error);
             }
 
             if ($this->missingDefault()) {
@@ -48,13 +46,12 @@ class ValidateExchangeRateRequest extends FormRequest
         return ExchangeRate::whereToId($this->get('to_id'))
             ->whereFromId($this->get('from_id'))
             ->whereDate('date', $this->get('date'))
-            ->where('id', '<>', optional($this->route('exchangeRate'))->id);
+            ->where('id', '<>', $this->route('exchangeRate')?->id);
     }
 
     protected function missingDefault()
     {
         return ! (new Collection([$this->get('to_id'), $this->get('from_id')]))
-            ->contains(Currency::
-                default()->first()->id);
+            ->contains(Currency::default()->first()->id);
     }
 }
