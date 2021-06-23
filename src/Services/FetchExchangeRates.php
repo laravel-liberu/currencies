@@ -4,7 +4,7 @@ namespace LaravelEnso\Currencies\Services;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
-use LaravelEnso\Currencies\APIs\FixerCurrency\Rates;
+use LaravelEnso\Currencies\APIs\FixerCurrency\Actions\Rates;
 use LaravelEnso\Currencies\Models\Currency;
 use LaravelEnso\Currencies\Models\ExchangeRate;
 use LaravelEnso\Helpers\Services\Decimals;
@@ -19,14 +19,13 @@ class FetchExchangeRates
         private Currency $base,
         private $toCurrencies
     ) {
-        $this->base = $base;
-        $this->toCurrencies = $toCurrencies;
         $this->precision = Config::get('enso.currencies.apiPrecision');
     }
 
     public function handle()
     {
-        $this->response = (new Rates($this->base, $this->toCurrencies))->handle();
+        $this->response = (new Rates($this->base, $this->toCurrencies))->handle()
+            ->json();
 
         $this->currencies = Currency::all();
 
@@ -37,7 +36,7 @@ class FetchExchangeRates
 
     private function processAll()
     {
-        (new Collection($this->response->rates))
+        (new Collection($this->response['rates']))
             ->each(fn ($rate, $currency) => $this->process($rate, $currency));
     }
 
@@ -57,7 +56,7 @@ class FetchExchangeRates
         ExchangeRate::updateOrCreate([
             'from_id' => $from->id,
             'to_id' => $to->id,
-            'date' => $this->response->date,
+            'date' => $this->response['date'],
         ], [
             'conversion' => $rate,
         ]);

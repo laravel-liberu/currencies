@@ -1,8 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency;
+namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
 
 use Carbon\Carbon;
+use LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints\History as Endpoint;
 use LaravelEnso\Currencies\Models\Currency;
 
 class History extends Exchange
@@ -16,18 +17,11 @@ class History extends Exchange
         $this->date = $date;
     }
 
-    public function handle()
+    protected function endpoint(): Endpoint
     {
-        return $this->api->endPoint($this->date->format('Y-m-d'))
-            ->query($this->query())
-            ->request();
-    }
-
-    private function query()
-    {
-        return [
-            'base' => $this->base,
+        return new Endpoint([
+            'base' => $this->base->code,
             'symbols' => $this->symbols(),
-        ];
+        ], $this->date);
     }
 }

@@ -25,6 +25,7 @@
     ],
     "homepage": "https://github.com/laravel-enso/currencies",
     "require": {
+        "laravel-enso/api": "^1.1",
         "laravel-enso/core": "^7.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/helpers": "^2.0",
