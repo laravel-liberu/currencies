@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         ], ['currency-factories', 'enso-factories']);
 
         $this->publishes([
-            __DIR__.'/../database/seeds' => database_path('seeds'),
+            __DIR__.'/../database/seeders' => database_path('seeders'),
         ], ['currency-seeder', 'enso-seeders']);
 
         $this->publishes([
