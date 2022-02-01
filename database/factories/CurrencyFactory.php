@@ -21,8 +21,7 @@ class CurrencyFactory extends Factory
             'code' => $country->currency_code,
             'name' => $country->currency,
             'symbol' => $this->faker->unique()->randomLetter,
-            'is_default' => Currency::
-                default()->first() === null,
+            'is_default' => Currency::default()->first() === null,
         ];
     }
 }
