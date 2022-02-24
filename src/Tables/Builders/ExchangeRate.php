@@ -3,16 +3,16 @@
 namespace LaravelEnso\Currencies\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Currencies\Models\ExchangeRate;
+use LaravelEnso\Currencies\Models\ExchangeRate as Model;
 use LaravelEnso\Tables\Contracts\Table;
 
-class ExchangeRateTable implements Table
+class ExchangeRate implements Table
 {
-    protected const TemplatePath = __DIR__.'/../Templates/exchangeRates.json';
+    private const TemplatePath = __DIR__.'/../Templates/exchangeRates.json';
 
     public function query(): Builder
     {
-        return ExchangeRate::selectRaw('
+        return Model::selectRaw('
             exchange_rates.id, exchange_rates.date, exchange_rates.conversion,
             fromCurrencies.code as "from", toCurrencies.code as "to"
         ')->join('currencies as fromCurrencies', 'fromCurrencies.id', '=', 'exchange_rates.from_id')

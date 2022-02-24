@@ -3,12 +3,12 @@
 namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Http\Requests\ValidateCurrencyRequest;
+use LaravelEnso\Currencies\Http\Requests\ValidateCurrency;
 use LaravelEnso\Currencies\Models\Currency;
 
 class Store extends Controller
 {
-    public function __invoke(ValidateCurrencyRequest $request, Currency $currency)
+    public function __invoke(ValidateCurrency $request, Currency $currency)
     {
         $currency->fill($request->validated())->save();
 

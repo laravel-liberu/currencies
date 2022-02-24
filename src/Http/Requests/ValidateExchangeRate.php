@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use LaravelEnso\Currencies\Models\Currency;
 use LaravelEnso\Currencies\Models\ExchangeRate;
 
-class ValidateExchangeRateRequest extends FormRequest
+class ValidateExchangeRate extends FormRequest
 {
     public function authorize()
     {
@@ -51,7 +51,7 @@ class ValidateExchangeRateRequest extends FormRequest
 
     protected function missingDefault()
     {
-        return ! (new Collection([$this->get('to_id'), $this->get('from_id')]))
+        return !(new Collection([$this->get('to_id'), $this->get('from_id')]))
             ->contains(Currency::default()->first()->id);
     }
 }

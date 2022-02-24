@@ -3,16 +3,16 @@
 namespace LaravelEnso\Currencies\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelEnso\Currencies\Models\Currency as Model;
 use LaravelEnso\Tables\Contracts\Table;
 
-class CurrencyTable implements Table
+class Currency implements Table
 {
-    protected const TemplatePath = __DIR__.'/../Templates/currencies.json';
+    private const TemplatePath = __DIR__.'/../Templates/currencies.json';
 
     public function query(): Builder
     {
-        return Currency::selectRaw('
+        return Model::selectRaw('
             currencies.id, currencies.code, currencies.name,
             currencies.symbol, currencies.is_default
         ');

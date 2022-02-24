@@ -5,7 +5,7 @@ namespace LaravelEnso\Currencies\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ValidateCurrencyRequest extends FormRequest
+class ValidateCurrency extends FormRequest
 {
     public function authorize()
     {
@@ -19,7 +19,7 @@ class ValidateCurrencyRequest extends FormRequest
                 'string', 'required', 'exists:countries,currency_code',
                 $this->unique('code'),
             ],
-            'name' => 'string|max:255|required|'.$this->unique('name'),
+            'name' => 'string|max:255|required|' . $this->unique('name'),
             'symbol' => 'string|required',
             'is_default' => 'boolean',
         ];
