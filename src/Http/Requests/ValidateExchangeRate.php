@@ -51,7 +51,7 @@ class ValidateExchangeRate extends FormRequest
 
     protected function missingDefault()
     {
-        return !(new Collection([$this->get('to_id'), $this->get('from_id')]))
+        return ! (new Collection([$this->get('to_id'), $this->get('from_id')]))
             ->contains(Currency::default()->first()->id);
     }
 }

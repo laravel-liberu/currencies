@@ -19,7 +19,7 @@ class ValidateCurrency extends FormRequest
                 'string', 'required', 'exists:countries,currency_code',
                 $this->unique('code'),
             ],
-            'name' => 'string|max:255|required|' . $this->unique('name'),
+            'name' => 'string|max:255|required|'.$this->unique('name'),
             'symbol' => 'string|required',
             'is_default' => 'boolean',
         ];
