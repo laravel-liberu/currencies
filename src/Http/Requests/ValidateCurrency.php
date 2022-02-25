@@ -5,7 +5,7 @@ namespace LaravelEnso\Currencies\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ValidateCurrencyRequest extends FormRequest
+class ValidateCurrency extends FormRequest
 {
     public function authorize()
     {

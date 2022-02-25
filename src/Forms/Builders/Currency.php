@@ -2,10 +2,10 @@
 
 namespace LaravelEnso\Currencies\Forms\Builders;
 
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelEnso\Currencies\Models\Currency as Model;
 use LaravelEnso\Forms\Services\Form;
 
-class CurrencyForm
+class Currency
 {
     private const TemplatePath = __DIR__.'/../Templates/currency.json';
 
@@ -13,7 +13,7 @@ class CurrencyForm
 
     public function __construct()
     {
-        $this->form = new Form(self::TemplatePath);
+        $this->form = new Form($this->templatePath());
     }
 
     public function create()
@@ -21,8 +21,13 @@ class CurrencyForm
         return $this->form->create();
     }
 
-    public function edit(Currency $currency)
+    public function edit(Model $currency)
     {
         return $this->form->edit($currency);
+    }
+
+    protected function templatePath(): string
+    {
+        return self::TemplatePath;
     }
 }

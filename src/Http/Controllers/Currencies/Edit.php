@@ -3,12 +3,12 @@
 namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Forms\Builders\CurrencyForm;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelEnso\Currencies\Forms\Builders\Currency;
+use LaravelEnso\Currencies\Models\Currency as Model;
 
 class Edit extends Controller
 {
-    public function __invoke(Currency $currency, CurrencyForm $form)
+    public function __invoke(Model $currency, Currency $form)
     {
         return ['form' => $form->edit($currency)];
     }
