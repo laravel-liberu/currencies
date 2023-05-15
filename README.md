@@ -6,10 +6,10 @@
 [![Total Downloads](https://poser.pugx.org/laravel-enso/currencies/downloads)](https://packagist.org/packages/laravel-enso/currencies)
 [![Latest Stable Version](https://poser.pugx.org/laravel-enso/currencies/version)](https://packagist.org/packages/laravel-enso/currencies)
 
-Currencies is an extension of the Laravel Enso enviroment, 
+Currencies is an extension of the Laravel Liberu enviroment, 
 designed for management of currencies and exchange rates.
 
-**Note:** *The package cannot be used outside of Enso enviroment and is not included in [Laravel Enso Core](https://github.com/laravel-enso/Core) packages.*
+**Note:** *The package cannot be used outside of Liberu enviroment and is not included in [Laravel Liberu Core](https://github.com/laravel-enso/Core) packages.*
 
 ### Features
 - handles CRUD operations for currencies and exchange rates
