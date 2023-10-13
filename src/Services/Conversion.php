@@ -21,7 +21,7 @@ class Conversion
     public function __construct()
     {
         $this->date = Carbon::today();
-        $this->precision = Config::get('enso.currencies.converterPrecision');
+        $this->precision = Config::get('liberu.currencies.converterPrecision');
     }
 
     public function handle(): string

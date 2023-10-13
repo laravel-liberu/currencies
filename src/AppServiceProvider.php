@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $this->mergeConfigFrom(__DIR__.'/../config/currencies.php', 'enso.currencies');
+        $this->mergeConfigFrom(__DIR__.'/../config/currencies.php', 'liberu.currencies');
 
         return $this;
     }
@@ -29,15 +29,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../database/factories' => database_path('factories'),
-        ], ['currency-factories', 'enso-factories']);
+        ], ['currency-factories', 'liberu-factories']);
 
         $this->publishes([
             __DIR__.'/../database/seeders' => database_path('seeders'),
-        ], ['currency-seeder', 'enso-seeders']);
+        ], ['currency-seeder', 'liberu-seeders']);
 
         $this->publishes([
-            __DIR__.'/../config' => config_path('enso'),
-        ], ['currencies-config', 'enso-config']);
+            __DIR__.'/../config' => config_path('liberu'),
+        ], ['currencies-config', 'liberu-config']);
 
         return $this;
     }

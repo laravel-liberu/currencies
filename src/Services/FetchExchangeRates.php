@@ -19,7 +19,7 @@ class FetchExchangeRates
         private Currency $base,
         private $toCurrencies
     ) {
-        $this->precision = Config::get('enso.currencies.apiPrecision');
+        $this->precision = Config::get('liberu.currencies.apiPrecision');
     }
 
     public function handle()

@@ -1,15 +1,15 @@
 # Currencies
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/231c10ed999f4dfd98d9def61c1e6f7e)](https://www.codacy.com/gh/laravel-enso/currencies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laravel-enso/currencies&amp;utm_campaign=Badge_Grade) 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/231c10ed999f4dfd98d9def61c1e6f7e)](https://www.codacy.com/gh/laravel-liberu/currencies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laravel-liberu/currencies&amp;utm_campaign=Badge_Grade) 
 [![StyleCI](https://github.styleci.io/repos/194647672/shield?branch=master)](https://github.styleci.io/repos/194647672)
-[![License](https://poser.pugx.org/laravel-enso/currencies/license)](https://packagist.org/packages/laravel-enso/currencies)
-[![Total Downloads](https://poser.pugx.org/laravel-enso/currencies/downloads)](https://packagist.org/packages/laravel-enso/currencies)
-[![Latest Stable Version](https://poser.pugx.org/laravel-enso/currencies/version)](https://packagist.org/packages/laravel-enso/currencies)
+[![License](https://poser.pugx.org/laravel-liberu/currencies/license)](https://packagist.org/packages/laravel-liberu/currencies)
+[![Total Downloads](https://poser.pugx.org/laravel-liberu/currencies/downloads)](https://packagist.org/packages/laravel-liberu/currencies)
+[![Latest Stable Version](https://poser.pugx.org/laravel-liberu/currencies/version)](https://packagist.org/packages/laravel-liberu/currencies)
 
 Currencies is an extension of the Laravel Liberu enviroment, 
 designed for management of currencies and exchange rates.
 
-**Note:** *The package cannot be used outside of Liberu enviroment and is not included in [Laravel Liberu Core](https://github.com/laravel-enso/Core) packages.*
+**Note:** *The package cannot be used outside of Liberu enviroment and is not included in [Laravel Liberu Core](https://github.com/laravel-liberu/Core) packages.*
 
 ### Features
 - handles CRUD operations for currencies and exchange rates
@@ -19,7 +19,7 @@ designed for management of currencies and exchange rates.
 - includes front-end assets
 
 ### Instalation
-* install the package using composer: `composer require laravel-enso/currencies`
+* install the package using composer: `composer require laravel-liberu/currencies`
 * adds the following alias in `webackpack.mix.js`
 ```
 .webpackConfig({
@@ -27,7 +27,7 @@ designed for management of currencies and exchange rates.
             extensions: ['.js', '.vue', '.json'],
             alias: {
                  //other aliases
-                '@currencies': `${__dirname}/vendor/laravel-enso/currencies/src/resources/js`,
+                '@currencies': `${__dirname}/vendor/laravel-liberu/currencies/src/resources/js`,
             },
         },
     })

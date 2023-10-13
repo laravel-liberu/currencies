@@ -20,7 +20,7 @@ abstract class Endpoint implements Contract
 
     public function url(): string
     {
-        $baseUrl = Config::get('enso.currencies.fixerCurrencyApi.host');
+        $baseUrl = Config::get('liberu.currencies.fixerCurrencyApi.host');
 
         return Collection::wrap([$baseUrl, $this->path()])
             ->filter()
@@ -30,6 +30,6 @@ abstract class Endpoint implements Contract
     public function body(): array
     {
         return $this->params() +
-            ['rapidapi-key' => Config::get('enso.currencies.fixerCurrencyApi.key')];
+            ['rapidapi-key' => Config::get('liberu.currencies.fixerCurrencyApi.key')];
     }
 }
