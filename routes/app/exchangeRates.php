@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\Create;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\Destroy;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\Edit;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\ExportExcel;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\InitTable;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\Store;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\TableData;
-use LaravelEnso\Currencies\Http\Controllers\ExchangeRates\Update;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\Create;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\Destroy;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\Edit;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\ExportExcel;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\InitTable;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\Store;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\TableData;
+use LaravelLiberu\Currencies\Http\Controllers\ExchangeRates\Update;
 
 Route::prefix('exchangeRates')->as('exchangeRates.')
     ->group(function () {

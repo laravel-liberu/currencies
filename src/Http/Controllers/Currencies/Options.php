@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
+namespace LaravelLiberu\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Http\Resources\Currency as Resource;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelLiberu\Currencies\Http\Resources\Currency as Resource;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

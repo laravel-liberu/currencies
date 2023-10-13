@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\ExchangeRates;
+namespace LaravelLiberu\Currencies\Http\Controllers\ExchangeRates;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Tables\Builders\ExchangeRate;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Currencies\Tables\Builders\ExchangeRate;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {

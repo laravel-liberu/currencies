@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Tables\Builders;
+namespace LaravelLiberu\Currencies\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Currencies\Models\ExchangeRate as Model;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Currencies\Models\ExchangeRate as Model;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class ExchangeRate implements Table
 {

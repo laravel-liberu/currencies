@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
+namespace LaravelLiberu\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Forms\Builders\Currency;
-use LaravelEnso\Currencies\Models\Currency as Model;
+use LaravelLiberu\Currencies\Forms\Builders\Currency;
+use LaravelLiberu\Currencies\Models\Currency as Model;
 
 class Edit extends Controller
 {

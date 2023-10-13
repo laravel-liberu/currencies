@@ -36,15 +36,15 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelEnso\\Currencies\\": "src/",
-            "LaravelEnso\\Currencies\\Database\\Factories\\": "database/factories/",
-            "LaravelEnso\\Currencies\\Database\\Seeders\\": "database/seeders/"
+            "LaravelLiberu\\Currencies\\": "src/",
+            "LaravelLiberu\\Currencies\\Database\\Factories\\": "database/factories/",
+            "LaravelLiberu\\Currencies\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelEnso\\Currencies\\AppServiceProvider"
+                "LaravelLiberu\\Currencies\\AppServiceProvider"
             ]
         }
     },

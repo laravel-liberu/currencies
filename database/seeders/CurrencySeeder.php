@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\Database\Seeders;
+namespace LaravelLiberu\Currencies\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Models\Currency;
 
 class CurrencySeeder extends Seeder
 {

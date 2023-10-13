@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints;
 
 class Convert extends Endpoint
 {

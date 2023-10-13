@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\Commands;
+namespace LaravelLiberu\Currencies\Commands;
 
 use Illuminate\Console\Command;
-use LaravelEnso\Currencies\Jobs\FetchExchangeRates as Job;
+use LaravelLiberu\Currencies\Jobs\FetchExchangeRates as Job;
 
 class FetchExchangeRates extends Command
 {

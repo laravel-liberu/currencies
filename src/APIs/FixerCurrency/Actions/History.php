@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Actions;
 
 use Carbon\Carbon;
-use LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints\History as Endpoint;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints\History as Endpoint;
+use LaravelLiberu\Currencies\Models\Currency;
 
 class History extends Exchange
 {

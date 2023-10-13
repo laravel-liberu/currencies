@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Actions;
 
-use LaravelEnso\Api\Action;
-use LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints\Convert as Endpoint;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Api\Action;
+use LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints\Convert as Endpoint;
+use LaravelLiberu\Currencies\Models\Currency;
 
 class Convert extends Action
 {

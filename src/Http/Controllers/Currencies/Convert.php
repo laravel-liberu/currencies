@@ -1,12 +1,12 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
+namespace LaravelLiberu\Currencies\Http\Controllers\Currencies;
 
 use Carbon\Carbon;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Http\Requests\ValidateConversion;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Currencies\Services\Conversion;
+use LaravelLiberu\Currencies\Http\Requests\ValidateConversion;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Services\Conversion;
 
 class Convert extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Actions;
 
-use LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints\Rates as Endpoint;
+use LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints\Rates as Endpoint;
 
 class Rates extends Exchange
 {

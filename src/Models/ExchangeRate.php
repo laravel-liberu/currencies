@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\Models;
+namespace LaravelLiberu\Currencies\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Tables\Traits\TableCache;
+use LaravelLiberu\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelLiberu\Tables\Traits\TableCache;
 
 class ExchangeRate extends Model
 {

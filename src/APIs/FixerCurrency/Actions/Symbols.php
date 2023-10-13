@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Actions;
 
-use LaravelEnso\Api\Action;
-use LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints\Symbols as Endpoint;
+use LaravelLiberu\Api\Action;
+use LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints\Symbols as Endpoint;
 
 class Symbols extends Action
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Tables\Builders;
+namespace LaravelLiberu\Currencies\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Currencies\Models\Currency as Model;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Currencies\Models\Currency as Model;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class Currency implements Table
 {

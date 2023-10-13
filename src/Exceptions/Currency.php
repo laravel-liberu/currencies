@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Currencies\Exceptions;
+namespace LaravelLiberu\Currencies\Exceptions;
 
-use LaravelEnso\Helpers\Exceptions\EnsoException;
+use LaravelLiberu\Helpers\Exceptions\EnsoException;
 
 class Currency extends EnsoException
 {

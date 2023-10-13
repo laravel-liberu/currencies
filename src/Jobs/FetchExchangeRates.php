@@ -1,14 +1,14 @@
 <?php
 
-namespace LaravelEnso\Currencies\Jobs;
+namespace LaravelLiberu\Currencies\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Currencies\Services\FetchExchangeRates as Service;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Services\FetchExchangeRates as Service;
 
 class FetchExchangeRates implements ShouldQueue
 {

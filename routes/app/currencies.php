@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Convert;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Create;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Destroy;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Edit;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\ExportExcel;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\InitTable;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Options;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Store;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\TableData;
-use LaravelEnso\Currencies\Http\Controllers\Currencies\Update;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Convert;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Create;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Destroy;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Edit;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\ExportExcel;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\InitTable;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Options;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Store;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\TableData;
+use LaravelLiberu\Currencies\Http\Controllers\Currencies\Update;
 
 Route::prefix('currencies')->as('currencies.')
     ->group(function () {

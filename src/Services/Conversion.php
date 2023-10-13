@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelEnso\Currencies\Services;
+namespace LaravelLiberu\Currencies\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
-use LaravelEnso\Currencies\Exceptions\Conversion as Exception;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Currencies\Models\ExchangeRate;
-use LaravelEnso\Helpers\Services\Decimals;
+use LaravelLiberu\Currencies\Exceptions\Conversion as Exception;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Models\ExchangeRate;
+use LaravelLiberu\Helpers\Services\Decimals;
 
 class Conversion
 {

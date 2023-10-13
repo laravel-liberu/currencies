@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\Forms\Builders;
+namespace LaravelLiberu\Currencies\Forms\Builders;
 
-use LaravelEnso\Currencies\Models\ExchangeRate as Model;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Currencies\Models\ExchangeRate as Model;
+use LaravelLiberu\Forms\Services\Form;
 
 class ExchangeRate
 {

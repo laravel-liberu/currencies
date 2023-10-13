@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\Exceptions;
+namespace LaravelLiberu\Currencies\Exceptions;
 
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Helpers\Exceptions\EnsoException;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Helpers\Exceptions\EnsoException;
 
 class Conversion extends EnsoException
 {

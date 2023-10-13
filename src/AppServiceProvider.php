@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies;
+namespace LaravelLiberu\Currencies;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Currencies\Commands\FetchExchangeRates;
+use LaravelLiberu\Currencies\Commands\FetchExchangeRates;
 
 class AppServiceProvider extends ServiceProvider
 {

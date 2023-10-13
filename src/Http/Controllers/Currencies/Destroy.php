@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
+namespace LaravelLiberu\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Models\Currency;
 
 class Destroy extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Controllers\Currencies;
+namespace LaravelLiberu\Currencies\Http\Controllers\Currencies;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Currencies\Http\Requests\ValidateCurrency;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Http\Requests\ValidateCurrency;
+use LaravelLiberu\Currencies\Models\Currency;
 
 class Store extends Controller
 {

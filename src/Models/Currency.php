@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelEnso\Currencies\Models;
+namespace LaravelLiberu\Currencies\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Countries\Models\Country;
-use LaravelEnso\Currencies\Exceptions\Currency as Exception;
-use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Tables\Traits\TableCache;
+use LaravelLiberu\Countries\Models\Country;
+use LaravelLiberu\Currencies\Exceptions\Currency as Exception;
+use LaravelLiberu\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelLiberu\Tables\Traits\TableCache;
 
 class Currency extends Model
 {

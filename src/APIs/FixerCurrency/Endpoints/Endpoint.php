@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Endpoints;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Endpoints;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
-use LaravelEnso\Api\Contracts\Endpoint as Contract;
-use LaravelEnso\Api\Enums\Methods;
+use LaravelLiberu\Api\Contracts\Endpoint as Contract;
+use LaravelLiberu\Api\Enums\Methods;
 
 abstract class Endpoint implements Contract
 {

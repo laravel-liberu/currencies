@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Currencies\Http\Requests;
+namespace LaravelLiberu\Currencies\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Currencies\Models\ExchangeRate;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Models\ExchangeRate;
 
 class ValidateExchangeRate extends FormRequest
 {

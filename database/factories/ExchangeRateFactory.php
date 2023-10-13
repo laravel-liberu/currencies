@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\Database\Factories;
+namespace LaravelLiberu\Currencies\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use LaravelEnso\Currencies\Models\Currency;
-use LaravelEnso\Currencies\Models\ExchangeRate;
+use LaravelLiberu\Currencies\Models\Currency;
+use LaravelLiberu\Currencies\Models\ExchangeRate;
 
 class ExchangeRateFactory extends Factory
 {

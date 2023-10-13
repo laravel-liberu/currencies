@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Currencies\APIs\FixerCurrency\Actions;
+namespace LaravelLiberu\Currencies\APIs\FixerCurrency\Actions;
 
 use Illuminate\Support\Collection;
-use LaravelEnso\Api\Action;
-use LaravelEnso\Currencies\Models\Currency;
+use LaravelLiberu\Api\Action;
+use LaravelLiberu\Currencies\Models\Currency;
 
 abstract class Exchange extends Action
 {
