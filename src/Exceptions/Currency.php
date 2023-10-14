@@ -2,9 +2,9 @@
 
 namespace LaravelLiberu\Currencies\Exceptions;
 
-use LaravelLiberu\Helpers\Exceptions\EnsoException;
+use LaravelLiberu\Helpers\Exceptions\LiberuException;
 
-class Currency extends EnsoException
+class Currency extends LiberuException
 {
     public static function cannotDeleteDefault()
     {

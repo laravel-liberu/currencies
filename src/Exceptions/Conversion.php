@@ -3,9 +3,9 @@
 namespace LaravelLiberu\Currencies\Exceptions;
 
 use LaravelLiberu\Currencies\Models\Currency;
-use LaravelLiberu\Helpers\Exceptions\EnsoException;
+use LaravelLiberu\Helpers\Exceptions\LiberuException;
 
-class Conversion extends EnsoException
+class Conversion extends LiberuException
 {
     public static function missingExchangeRate(Currency $from, Currency $to)
     {
